@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <!-- 1) Daire icon ile başlık süsleme-->
+<head>
+    <style>
+        h2::before {
+            content: "\2022"; /* Daire simgesi (Unicode karakteri) */
+            margin-right: 10px; /* Simge ile başlık arasına boşluk bırakma */
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Web Tasarımı</h2>
+    <h2>Front-end Geliştirme</h2>
+</body>
+
+<!-- 2) Özel çizgi ile menü oluşturma -->
+<head>
+    <style>
+        li::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #FF5733; /* Özel çizgi rengi */
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Ana Sayfa</li>
+        <li>Hakkımızda</li>
+        <li>Ürünler</li>
+        <li>İletişim</li>
+    </ul>
+</body>
+
+<!-- 3)Butonlar için artan sayılar. -->
+<head>
+    <style>
+        button::before {
+            content: attr(data-number); /* data-number özelliğini pseudo elemanda kullanma */
+            display: inline-block;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <button data-number="1">Düğme 1</button>
+    <button data-number="2">Düğme 2</button>
+    <button data-number="3">Düğme 3</button>
+</body>
+
+<!--4) Süslü Blok Düzenleme-->
+<head>
+    <style>
+        .block {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            background-color: #007BFF;
+            color: #FFFFFF;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .block::before,
+        .block::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.3); /* Yarı saydam arka plan */
+            z-index: -1;
+        }
+
+        .block::before {
+            transform: skewX(-45deg); /* 45 derece çevirme */
+            transform-origin: top right; /* Dönüşün orijini */
+        }
+
+        .block::after {
+            transform: skewX(45deg); /* -45 derece çevirme */
+            transform-origin: top left; /* Dönüşün orijini */
+        }
+    </style>
+</head>
+<body>
+    <div class="block">Süslü Blok 1</div>
+    <div class="block">Süslü Blok 2</div>
+    <div class="block">Süslü Blok 3</div>
+</body>
+
+
+<!-- 5) İçeriği özel karakterle tamamlama-->
+<head>
+    <style>
+        h1::after {
+            content: " 💡"; /* Işık ampulü simgesi (Unicode karakteri) */
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Web Tasarım</h1>
+</body>
+
+<!--Basit ok simgeleri-->
+<html>
+<head>
+    <style>
+        li {
+            position: relative;
+            padding-left: 20px;
+            line-height: 24px;
+        }
+
+        li::before {
+            content: "➤"; /* Ok simgesi (Unicode karakteri) */
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

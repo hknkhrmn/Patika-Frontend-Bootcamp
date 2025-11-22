@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Formu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #3cb371;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        #h1 {
+            color: #a8e8cf;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 3px;
+        }
+
+        #p {
+            color: #d4f5e2;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .form-container {
+            background: #1e3d2f;
+            border-radius: 12px;
+            padding: 35px 30px;
+            width: 100%;
+            margin: auto;
+            max-width: 400px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-wrapper label {
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: #1e3d2f;
+            padding: 0 8px;
+            color: #a8e6cf;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .input-wrapper input {
+            width: 100%;
+            padding: 16px;
+            background: #2a4f3d;
+            border: 2px solid #3d6b52;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        .input-wrapper input::placeholder {
+            color: #6b9a7d;
+        }
+
+        .input-wrapper input:focus {
+            outline: none;
+            border-color: #56d48f;
+            box-shadow: 0 0 0 3px rgba(86, 212, 143, 0.2);
+        }
+
+        .select-wrapper {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .select-wrapper select {
+            width: 100%;
+            padding: 12px 15px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid #56d48f;
+            font-size: 15px;
+            color: #56d48f;
+            cursor: pointer;
+            appearance: none;
+            text-align: center;
+        }
+
+        .select-wrapper select:focus {
+            outline: none;
+        }
+
+        .select-wrapper select option {
+            background: #1e3d2f;
+            color: #fff;
+            text-align: left;
+        }
+
+        .select-wrapper::after {
+            content: '∨';
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #56d48f;
+            pointer-events: none;
+        }
+
+        .section-label {
+            color: #c8e6d5;
+            font-size: 14px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #a0c4ae;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .radio-item input[type="radio"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #56d48f;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .radio-item input[type="radio"]:checked::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #56d48f;
+            border-radius: 50%;
+        }
+
+        .checkbox-group {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            color: #a0c4ae;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #56d48f;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked {
+            background: #56d48f;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked::before {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #1e3d2f;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: transparent;
+            border: 2px solid #56d48f;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #fff;
+            font-family: inherit;
+            resize: none;
+            height: 80px;
+            margin-bottom: 20px;
+        }
+
+        textarea::placeholder {
+            color: #56d48f;
+            font-style: italic;
+        }
+
+        textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(86, 212, 143, 0.2);
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #3cb371 0%, #2e8b57 100%);
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(60, 179, 113, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1">Anket Formu</h1>
+    <p id="p">CSS Pratik Çalışması</p>
+
+    <div class="form-container">
+        <form id="survey-form">
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <label id="name-label" for="name">Ad Soyad</label>
+                    <input type="text" id="name" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <label id="email-label" for="email"> E-posta</label>
+                    <input type="email" id="email" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-wrapper">
+                    <label id="number-label" for="number"> Yaş</label>
+                    <input type="number" id="number" placeholder="" min="1" max="120" required>
+                </div>
+            </div>
+            <div class="select-wrapper">
+                <select id="dropdown" required>
+                    <option value="" disabled selected>Cinsiyet Seçiniz</option>
+                    <option value="erkek">Erkek</option>
+                    <option value="kadin">Kadın</option>
+                    <option value="diger">Belirtmek İstemiyorum</option>
+                </select>
+            </div>
+            <div class="section-label">Bizi nereden duydunuz?</div>
+            <div class="radio-group">
+                <label class="radio-item">
+                    <input type="radio" name="kaynak" value="instagram"> Instagram
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="kaynak" value="linkedin"> LinkedIn
+                </label>
+                <label class="radio-item">
+                    <input type="radio" name="kaynak" value="diger"> Diğer
+                </label>
+            </div>
+            <div class="checkbox-group">
+                <label class="checkbox-item">
+                    <input type="checkbox" value="terms">
+                    <span>Kullanım<br>Koşulları</span>
+                </label>
+                <label class="checkbox-item">
+                    <input type="checkbox" value="newsletter">
+                    <span>Bültene<br>Abone Ol</span>
+                </label>
+            </div>
+            <textarea id="comments" placeholder="Önerileriniz..."></textarea>
+
+            <input type="submit" id="submit" value="Kayıt Ol">
+        </form>
+    </div>
+</body>
+
+</html>
+</div>
+</body>
+
+</html>

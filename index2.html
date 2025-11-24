@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. Dr. Doğan Cüceloğlu</title>
+    <style>
+        /* GENEL SAYFA AYARLARI */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Yazı tipi ve fontu. */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6; /* Göz yormayan açık gri/mavi ton */
+            color: #333;
+        }
+
+        /* İSTER 1: Navigasyon Menüsü */
+        header {
+            background-color: #2c3e50; /* Koyu Lacivert - Ciddiyet ve Akademi */
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Navigasyon Linkleri */
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Linkin üzerine gelince renk değişsin  */
+        nav a:hover {
+            color: #3498db; /* Açık Mavi */
+            text-decoration: underline;
+        }
+
+        /* ANA GİRİŞ (HERO) */
+        .hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 42px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        /* ORTAK KAPSAYICI (Sayfayı ortalamak için) */
+        .container {
+            width: 80%; /* Sayfa genişliğinin %80'i */
+            max-width: 1000px; /* Çok geniş ekranlarda dağılmasın */
+            margin: 0 auto; /* Sağı ve solu otomatik ortalar */
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Hafif gölge */
+        }
+
+        /* İSTER 2: Görsel ve Alıntı Bölümü */
+        .intro-section {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eee; /* Bölümler arası çizgi */
+            padding-bottom: 40px;
+        }
+
+        .author-img {
+            width: 100%;
+            max-width: 400px; /* Resim çok büyümesin */
+            border-radius: 10px; /* Köşeleri yuvarlattım */
+            border: 5px solid #ecf0f1; /* Resim çerçevesi */
+        }
+
+        .citation {
+            font-style: italic;
+            color: #555;
+            font-size: 20px;
+            margin-top: 20px;
+            background-color: #eaf2f8; /*  açık mavi kutu */
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* İSTER 3: Biyografi Bölümü */
+        .bio-section h2, .books-section h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db; /* Başlık solunda mavi çizgi */
+            padding-left: 15px;
+        }
+
+        .bio-text {
+            line-height: 1.8; /* Satır aralığı koydum okuma kolaylaşsın diye */
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: justify; /* Yazıyı iki yana yasladık */
+        }
+
+        /* İSTER 4: Eserler (Kitaplar) */
+        .books-container {
+            /* Kitapları yan yana dizmek için*/
+            display: flex;
+            flex-wrap: wrap; /* Sığmayan aşağı geçsin */
+            gap: 20px; /* Kutular arası boşluk */
+            justify-content: center; /* Ortala */
+        }
+
+        .book-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            width: 200px; /* Her kitabın genişliği */
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        /* Kitabın üzerine gelince hafif oynasın */
+        .book-card:hover {
+            background-color: #ecf0f1;
+        }
+
+        .book-name {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .book-year {
+            color: #7f8c8d; /* Gri renk */
+            font-size: 14px;
+        }
+
+        /* İSTER 5: Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+
+        /* Responsive - Mobil Uyumluluk (Telefonda resim taşmasın) */
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            nav a {
+                display: block; /* Mobilde linkler alt alta olsun */
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#info">Info</a>
+            <a href="#books">Books</a>
+        </nav>
+    </header>
+
+    <div id="home" class="hero">
+        <h1>Prof. Dr. Doğan Cüceloğlu</h1>
+        <p>İletişim Psikolojisi Uzmanı ve Yazar</p>
+    </div>
+
+    <div class="container">
+        
+        <div class="intro-section">
+            <img src="./assets/dogancuceloglu.jpg" alt="Doğan Cüceloğlu Portresi" class="author-img">
+            
+            <div class="citation">
+                "İnsan insana karşı saygılı, sevecen ve anlayışlı olmalıdır. İletişim, hayatın temel taşıdır."
+                <br>
+                <strong>- Prof. Dr. Doğan Cüceloğlu</strong>
+            </div>
+        </div>
+
+        <div id="info" class="bio-section">
+            <h2>Biyografi</h2>
+            <p class="bio-text">
+                Doğan Cüceloğlu, 1938 yılında Mersin'in Silifke ilçesinde doğdu. On bir çocuklu bir ailenin on birinci çocuğudur. İstanbul Üniversitesi Psikoloji Bölümü'nden mezun olduktan sonra ABD'de Illinois Üniversitesi'nde doktorasını tamamladı.
+            </p>
+            <p class="bio-text">
+                Türkiye'ye döndüğünde Hacettepe ve Boğaziçi üniversitelerinde çalıştı. Fulbright bursuyla tekrar ABD'ye giderek Kaliforniya'da uzun yıllar öğretim üyeliği yaptı.
+            </p>
+            <p class="bio-text">
+                <strong>Kariyeri ve Katkıları:</strong> Türk insanının düşünce, duygu ve davranışlarını bilimsel psikoloji kavramları ile inceledi. Yazdığı kitaplarla "İnsan İnsana" iletişim kavramını topluma kazandırdı. 2021 yılında İstanbul'da hayatını kaybetti ama eserleriyle yaşamaya devam ediyor.
+            </p>
+        </div>
+
+        <div id="books" class="books-section">
+            <h2>Önemli Eserleri</h2>
+            <div class="books-container">
+                
+                <div class="book-card">
+                    <div class="book-name">İnsan İnsana</div>
+                    <div class="book-year">1991</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-name">İçimizdeki Çocuk</div>
+                    <div class="book-year">1992</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-name">Savaşçı</div>
+                    <div class="book-year">1999</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-name">Mış Gibi Yaşamlar</div>
+                    <div class="book-year">2005</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-name">Başarıya Götüren Aile</div>
+                    <div class="book-year">2006</div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-name">Var Mısın?</div>
+                    <div class="book-year">2021</div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Page Made For [Hakan Kahraman] Assignment</p>
+        <p>© 2025 Tribute Website Project</p>
+    </footer>
+
+</body>
+</html>

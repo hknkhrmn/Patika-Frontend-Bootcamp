@@ -67,7 +67,7 @@ body {
 }
 
 
-.stickysidebar {
+#sticky-sidebar {
     position: fixed;
     top: 54px;
     width: 335px;

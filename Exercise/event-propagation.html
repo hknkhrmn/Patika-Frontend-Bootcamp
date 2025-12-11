@@ -1,0 +1,98 @@
+<!-- Pratik Ödevi:
+
+Bir iç içe div yapısı oluşturun ve her bir div elementine tıklama olayı ekleyin. Her tıklamada hangi divelementine tıklandığını konsola yazdırın.
+
+Olay yayılımını durdurmak için stopPropagation metodunu kullanarak sadece en içteki div elementinin tıklama olayını yazdırın. -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olay Yayılımı (Propagation) Ödevi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .kutu {
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid;
+            cursor: pointer;
+            text-align: center;
+        }
+        #disKutu {
+            border-color: red;
+            background-color: #fcebeb;
+        }
+        #ortaKutu {
+            border-color: green;
+            background-color: #ebfcf4;
+        }
+        #icKutu {
+            border-color: blue;
+            background-color: #ebf3fc;
+        }
+        .not {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px dashed #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>⏫ Olay Yayılımı (Event Propagation) Ödevi</h1>
+    <p>Lütfen tarayıcınızın konsolunu (F12) açın ve aşağıdaki kutulara tıklayın.</p>
+
+    <div id="disKutu" class="kutu">
+        Dış Kutu
+        <div id="ortaKutu" class="kutu">
+            Orta Kutu
+            <div id="icKutu" class="kutu">
+                İç Kutu
+            </div>
+        </div>
+    </div>
+
+    <div class="not">
+        <strong>Talimat:</strong><br>
+        1. İlk denemede sadece **İç Kutu**'ya tıklayın. Konsolda üç mesaj göreceksiniz (Kabarcıklanma).<br>
+        2. İkinci denemede, kodu açıp `// YAYILIMI DURDURMA` satırındaki yorum işaretini kaldırın (`event.stopPropagation();`).<br>
+        3. Tekrar **İç Kutu**'ya tıklayın. Konsolda sadece tek bir mesaj (İç Kutu) göreceksiniz.
+    </div>
+
+    <script>
+        // 1. DOM Öğelerini Seçme
+        const disKutu = document.getElementById('disKutu');
+        const ortaKutu = document.getElementById('ortaKutu');
+        const icKutu = document.getElementById('icKutu');
+
+        // 2. Her kutuya tıklama olayını ekleme
+        
+        // --- Dış Kutu Olay Dinleyicisi ---
+        disKutu.addEventListener('click', function() {
+            console.log('--- Dış Kutu Tıklandı ---');
+        });
+
+        // --- Orta Kutu Olay Dinleyicisi ---
+        ortaKutu.addEventListener('click', function() {
+            console.log('--- Orta Kutu Tıklandı ---');
+        });
+
+        // --- İç Kutu Olay Dinleyicisi ---
+        icKutu.addEventListener('click', function(event) {
+            console.log('*** İÇ KUTU TIKLANDI (Hedef) ***');
+
+            // ----------------------------------------------------
+            // GÖREV 2: Olay Yayılımını Durdurma (Propagation)
+            // İlk denemeden sonra aşağıdaki satırı aktif edin.
+            // ----------------------------------------------------
+             event.stopPropagation();
+            
+        });
+    </script>
+
+</body>
+</html>
+

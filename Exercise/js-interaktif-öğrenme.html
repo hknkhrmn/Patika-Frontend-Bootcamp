@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript İnteraktif Öğrenme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        .section {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .code-area {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        textarea {
+            flex: 1;
+            min-width: 300px;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            resize: vertical;
+            background: #fff;
+        }
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .output {
+            flex: 1;
+            min-width: 300px;
+            min-height: 120px;
+            padding: 15px;
+            background: #1e1e1e;
+            color: #4ec9b0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .example {
+            background: #e3f2fd;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #1976d2;
+        }
+        .tip {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 JavaScript İnteraktif Öğrenme</h1>
+        <p class="subtitle">Kodları değiştir, çalıştır ve sonuçları gör!</p>
+
+        <!-- 1. Variables -->
+        <div class="section">
+            <h2>1️⃣ Variables (Değişkenler)</h2>
+            <div class="example">Örnek: let isim = "Ahmet"</div>
+            <div class="code-area">
+                <textarea id="code1">let isim = "Ahmet"
+let soyisim = "Yılmaz"
+let yas = 25
+
+console.log("Ad:", isim)
+console.log("Soyad:", soyisim)
+console.log("Yaş:", yas)
+console.log("Tam isim:", isim + " " + soyisim)</textarea>
+                <div class="output" id="output1">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(1)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(1)">🗑️ Temizle</button>
+            </div>
+            <div class="tip">💡 İpucu: "Ahmet" yerine kendi adını yaz ve çalıştır!</div>
+        </div>
+
+        <!-- 2. Operators -->
+        <div class="section">
+            <h2>2️⃣ Operators (Operatörler)</h2>
+            <div class="example">Örnek: let toplam = 5 + 3</div>
+            <div class="code-area">
+                <textarea id="code2">let a = 10
+let b = 5
+
+console.log("a + b =", a + b)
+console.log("a - b =", a - b)
+console.log("a * b =", a * b)
+console.log("a / b =", a / b)
+
+let x = 10
+x += 5  // x = x + 5
+console.log("x += 5 sonucu:", x)</textarea>
+                <div class="output" id="output2">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(2)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(2)">🗑️ Temizle</button>
+            </div>
+            <div class="tip">💡 İpucu: Sayıları değiştir ve sonuçları gözlemle!</div>
+        </div>
+
+        <!-- 3. Data Types -->
+        <div class="section">
+            <h2>3️⃣ Data Types (Veri Tipleri)</h2>
+            <div class="example">Örnek: typeof "Merhaba" → "string"</div>
+            <div class="code-area">
+                <textarea id="code3">let metin = "Merhaba Dünya"
+let sayi = 42
+let ondalikSayi = 3.14
+let dogruMu = true
+let bos = null
+
+console.log("Metin:", metin, "→ Tipi:", typeof metin)
+console.log("Sayı:", sayi, "→ Tipi:", typeof sayi)
+console.log("Ondalık:", ondalikSayi, "→ Tipi:", typeof ondalikSayi)
+console.log("Boolean:", dogruMu, "→ Tipi:", typeof dogruMu)
+console.log("Null:", bos, "→ Tipi:", typeof bos)</textarea>
+                <div class="output" id="output3">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(3)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(3)">🗑️ Temizle</button>
+            </div>
+        </div>
+
+        <!-- 4. Functions -->
+        <div class="section">
+            <h2>4️⃣ Functions (Fonksiyonlar)</h2>
+            <div class="example">Örnek: function selamla(isim) { return "Merhaba " + isim }</div>
+            <div class="code-area">
+                <textarea id="code4">function selamla(isim) {
+    return "Merhaba " + isim + "!"
+}
+
+function topla(a, b) {
+    return a + b
+}
+
+const carp = (x, y) => x * y
+
+console.log(selamla("Ahmet"))
+console.log(selamla("Ayşe"))
+console.log("5 + 3 =", topla(5, 3))
+console.log("4 * 7 =", carp(4, 7))</textarea>
+                <div class="output" id="output4">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(4)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(4)">🗑️ Temizle</button>
+            </div>
+            <div class="tip">💡 İpucu: Kendi fonksiyonunu yaz ve çağır!</div>
+        </div>
+
+        <!-- 5. Objects -->
+        <div class="section">
+            <h2>5️⃣ Objects (Nesneler)</h2>
+            <div class="example">Örnek: let kisi = { ad: "Ali", yas: 30 }</div>
+            <div class="code-area">
+                <textarea id="code5">let araba = {
+    marka: "Toyota",
+    model: "Corolla",
+    yil: 2023,
+    renk: "Kırmızı",
+    calistir: function() {
+        return this.marka + " " + this.model + " çalıştırıldı!"
+    }
+}
+
+console.log("Marka:", araba.marka)
+console.log("Model:", araba.model)
+console.log("Yıl:", araba.yil)
+console.log("Renk:", araba.renk)
+console.log(araba.calistir())</textarea>
+                <div class="output" id="output5">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(5)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(5)">🗑️ Temizle</button>
+            </div>
+        </div>
+
+        <!-- 6. Arrays -->
+        <div class="section">
+            <h2>6️⃣ Arrays (Diziler)</h2>
+            <div class="example">Örnek: let meyveler = ["elma", "armut", "muz"]</div>
+            <div class="code-area">
+                <textarea id="code6">let meyveler = ["elma", "armut", "muz", "çilek"]
+
+console.log("Tüm meyveler:", meyveler)
+console.log("İlk meyve:", meyveler[0])
+console.log("İkinci meyve:", meyveler[1])
+console.log("Toplam:", meyveler.length, "meyve")
+
+meyveler.push("kiraz")
+console.log("Kiraz eklendi:", meyveler)
+
+let sonMeyve = meyveler.pop()
+console.log("Son meyve çıkarıldı:", sonMeyve)
+console.log("Kalan meyveler:", meyveler)</textarea>
+                <div class="output" id="output6">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(6)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(6)">🗑️ Temizle</button>
+            </div>
+        </div>
+
+        <!-- 7. Conditional Statements -->
+        <div class="section">
+            <h2>7️⃣ Conditional Statements (Koşullar)</h2>
+            <div class="example">Örnek: if (yas >= 18) { ... }</div>
+            <div class="code-area">
+                <textarea id="code7">let yas = 20
+let ehliyet = true
+
+if (yas >= 18 && ehliyet) {
+    console.log("✅ Araba kullanabilirsin!")
+} else if (yas >= 18 && !ehliyet) {
+    console.log("⚠️ Ehliyet almalısın")
+} else {
+    console.log("❌ Henüz küçüksün")
+}
+
+let not = 85
+if (not >= 90) {
+    console.log("Notun: AA")
+} else if (not >= 80) {
+    console.log("Notun: BA")
+} else {
+    console.log("Notun: BB veya altı")
+}</textarea>
+                <div class="output" id="output7">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(7)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(7)">🗑️ Temizle</button>
+            </div>
+            <div class="tip">💡 İpucu: Yaş değerini değiştir ve ne olduğunu gör!</div>
+        </div>
+
+        <!-- 8. Loops -->
+        <div class="section">
+            <h2>8️⃣ Loops (Döngüler)</h2>
+            <div class="example">Örnek: for (let i = 0; i < 5; i++) { ... }</div>
+            <div class="code-area">
+                <textarea id="code8">// For döngüsü
+console.log("=== For Döngüsü ===")
+for (let i = 1; i <= 5; i++) {
+    console.log(i + ". sayı")
+}
+
+// While döngüsü
+console.log("\n=== While Döngüsü ===")
+let sayac = 1
+while (sayac <= 3) {
+    console.log("Sayaç:", sayac)
+    sayac++
+}
+
+// Dizi döngüsü
+console.log("\n=== Dizi Döngüsü ===")
+let renkler = ["kırmızı", "mavi", "yeşil"]
+for (let renk of renkler) {
+    console.log("Renk:", renk)
+}</textarea>
+                <div class="output" id="output8">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(8)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(8)">🗑️ Temizle</button>
+            </div>
+        </div>
+
+        <!-- 9. Switch -->
+        <div class="section">
+            <h2>9️⃣ Switch Statement</h2>
+            <div class="example">Örnek: switch(gun) { case "Pazartesi": ... }</div>
+            <div class="code-area">
+                <textarea id="code9">let gun = "Çarşamba"
+
+switch (gun) {
+    case "Pazartesi":
+        console.log("📅 Hafta başı, işe gidelim!")
+        break
+    case "Çarşamba":
+        console.log("⏰ Haftanın ortası")
+        break
+    case "Cuma":
+        console.log("🎉 Hafta sonu yakın!")
+        break
+    case "Cumartesi":
+    case "Pazar":
+        console.log("🏖️ Hafta sonu tatil!")
+        break
+    default:
+        console.log("📚 Normal iş günü")
+}
+
+let puan = 85
+let harf
+switch (true) {
+    case (puan >= 90):
+        harf = "A"
+        break
+    case (puan >= 80):
+        harf = "B"
+        break
+    default:
+        harf = "C"
+}
+console.log("Harf notun:", harf)</textarea>
+                <div class="output" id="output9">Çalıştır butonuna bas...</div>
+            </div>
+            <div class="controls">
+                <button onclick="runCode(9)">▶️ Çalıştır</button>
+                <button onclick="clearOutput(9)">🗑️ Temizle</button>
+            </div>
+            <div class="tip">💡 İpucu: Günü değiştir (Pazartesi, Salı, vb.) ve sonucu gör!</div>
+        </div>
+
+    </div>
+
+    <script>
+        function runCode(sectionNum) {
+            const code = document.getElementById('code' + sectionNum).value;
+            const outputDiv = document.getElementById('output' + sectionNum);
+            
+            let output = '';
+            const originalLog = console.log;
+            
+            console.log = function(...args) {
+                output += args.map(arg => {
+                    if (typeof arg === 'object') {
+                        return JSON.stringify(arg, null, 2);
+                    }
+                    return String(arg);
+                }).join(' ') + '\n';
+                originalLog.apply(console, args);
+            };
+            
+            try {
+                eval(code);
+                outputDiv.textContent = output || 'Kod çalıştırıldı!';
+                outputDiv.style.color = '#4ec9b0';
+            } catch (error) {
+                outputDiv.textContent = '❌ Hata: ' + error.message;
+                outputDiv.style.color = '#f44336';
+            }
+            
+            console.log = originalLog;
+        }
+
+        function clearOutput(sectionNum) {
+            document.getElementById('output' + sectionNum).textContent = 'Çalıştır butonuna bas...';
+            document.getElementById('output' + sectionNum).style.color = '#4ec9b0';
+        }
+    </script>
+</body>
+</html>

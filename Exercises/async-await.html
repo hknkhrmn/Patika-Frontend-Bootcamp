@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asynchronous JavaScript - Tüm Yöntemler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: 2px solid #333;
+      background: #f0f0f0;
+    }
+    button:hover {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Asynchronous JavaScript</h1>
+  <p>Konsolu açın (F12) ve butonlara tıklayın!</p>
+  
+  <button id="callback">1. Callback Yöntemi</button>
+  <button id="promise">2. Promise Yöntemi</button>
+  <button id="asyncawait">3. Async/Await Yöntemi</button>
+  
+  <script>
+    // ========== 1. CALLBACK YÖNTEMİ ==========
+    function close() {
+      console.log('callback:close');
+    }
+
+    function signin() {
+      console.log('callback:signin');
+    }
+
+    function open(nextstep) {
+      console.log('callback:open');
+      setTimeout(function () {
+        nextstep();
+      }, 2000);
+    }
+
+    document.getElementById('callback').addEventListener('click', function() {
+      console.log('\n--- CALLBACK BAŞLADI ---');
+      if (true) {
+        open(close);
+      } else {
+        open(signin);
+      }
+    });
+
+    // ========== 2. PROMISE YÖNTEMİ ==========
+    function closePromise() {
+      console.log('promise:close');
+    }
+
+    function signinPromise() {
+      console.log('promise:signin');
+    }
+
+    function openPromise() {
+      console.log('promise:open');
+      
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          resolve('İşlem tamamlandı!');
+        }, 2000);
+      });
+    }
+
+    document.getElementById('promise').addEventListener('click', function() {
+      console.log('\n--- PROMISE BAŞLADI ---');
+      
+      openPromise()
+        .then(function(sonuc) {
+          console.log('Then bloğu:', sonuc);
+          closePromise();
+        })
+        .catch(function(hata) {
+          console.log('Catch bloğu:', hata);
+          signinPromise();
+        })
+        .finally(function() {
+          console.log('Finally bloğu: Her durumda çalışır');
+        });
+    });
+
+    // ========== 3. ASYNC/AWAIT YÖNTEMİ ==========
+    function closeAsync() {
+      console.log('async:close');
+    }
+
+    function signinAsync() {
+      console.log('async:signin');
+    }
+
+    function openAsync() {
+      console.log('async:open');
+      
+      // Promise döndüren fonksiyon
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          // Başarılı durum
+          resolve('İşlem başarıyla tamamlandı!');
+          
+          // Hata durumu için (yorumu kaldırırsanız hata verir):
+          // reject('Bir hata oluştu!');
+        }, 2000);
+      });
+    }
+
+    // async fonksiyon tanımlama
+    async function asyncProcess() {
+      try {
+        console.log('async:başlangıç');
+        
+        // await ile Promise'in tamamlanmasını bekliyoruz
+        const sonuc = await openAsync();
+        console.log('await sonucu:', sonuc);
+        
+        // Promise tamamlandıktan sonra devam eder
+        closeAsync();
+        
+        console.log('async:tamamlandı');
+        
+      } catch (hata) {
+        // Hata durumunda burası çalışır
+        console.log('Hata yakalandı:', hata);
+        signinAsync();
+        
+      } finally {
+        // Her durumda çalışır
+        console.log('Finally bloğu: Temizlik işlemleri');
+      }
+    }
+
+    document.getElementById('asyncawait').addEventListener('click', function() {
+      console.log('\n--- ASYNC/AWAIT BAŞLADI ---');
+      asyncProcess();
+    });
+  </script>
+</body>
+
+</html>

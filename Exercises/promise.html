@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asynchronous JavaScript - Promise</title>
+</head>
+
+<body>
+  <h1>Asynchronous JavaScript</h1>
+  <button id="callback">Callback Yöntemi</button>
+  <button id="promise">Promise Yöntemi</button>
+  
+  <script>
+    // ========== CALLBACK YÖNTEMİ ==========
+    function close() {
+      console.log('callback:close');
+    }
+
+    function signin() {
+      console.log('callback:signin');
+    }
+
+    function open(nextstep) {
+      console.log('callback:open');
+      setTimeout(function () {
+        nextstep();
+      }, 2000);
+    }
+
+    document.getElementById('callback').addEventListener('click', function() {
+      console.log('--- CALLBACK BAŞLADI ---');
+      if (true) {
+        open(close);
+      } else {
+        open(signin);
+      }
+    });
+
+    // ========== PROMISE YÖNTEMİ ==========
+    function closePromise() {
+      console.log('promise:close');
+    }
+
+    function signinPromise() {
+      console.log('promise:signin');
+    }
+
+    function openPromise() {
+      console.log('promise:open');
+      
+      // Promise oluşturuyoruz
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          // İşlem başarılı - resolve çağrılır
+          resolve('İşlem tamamlandı!');
+          
+          // Eğer hata olsaydı - reject çağrılırdı
+          // reject('Hata oluştu!');
+        }, 2000);
+      });
+    }
+
+    document.getElementById('promise').addEventListener('click', function() {
+      console.log('--- PROMISE BAŞLADI ---');
+      
+      openPromise()
+        .then(function(sonuc) {
+          console.log('Then bloğu:', sonuc);
+          closePromise();
+        })
+        .catch(function(hata) {
+          console.log('Catch bloğu:', hata);
+          signinPromise();
+        })
+        .finally(function() {
+          console.log('Finally bloğu: Her durumda çalışır');
+        });
+    });
+  </script>
+</body>
+
+</html>

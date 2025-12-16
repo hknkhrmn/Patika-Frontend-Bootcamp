@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asynchronous JavaScript</title>
+</head>
+
+<body>
+  <h1>Asynchronous JavaScript</h1>
+  <button id="callback">Callback</button>
+  <button id="callback2">Callback2</button>
+  
+  <script>
+    // JavaScript Callbacks
+    function close() {
+      console.log('callback:close');
+    }
+
+    function signin() {
+      console.log('callback:signin');
+    }
+
+    function open(nextstep) {
+      console.log('callback:open');
+      setTimeout(function () {
+        nextstep();
+      }, 2000);
+    }
+
+    document.getElementById('callback').addEventListener('click', function() {
+      if (true) {
+        open(close);
+      } else {
+        open(signin);
+      }
+    });
+  </script>
+</body>
+
+</html>

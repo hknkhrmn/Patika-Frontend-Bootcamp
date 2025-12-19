@@ -1,6 +1,21 @@
 function generatePassword(length) {
-    // Kodunuzu buraya yazınız.
-    return "12345678";
+  // Geçersiz uzunluk kontrolü
+  if (typeof length !== 'number' || length <= 0) {
+    throw new Error("Geçerli bir uzunluk girin.");
+  }
+
+  // Kullanılacak karakterler (sadece harf ve rakam)
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  
+  let password = '';
+  
+  // Belirtilen uzunlukta rastgele şifre oluştur
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters[randomIndex];
   }
   
-  module.exports = generatePassword;
+  return password;
+}
+
+module.exports = generatePassword;

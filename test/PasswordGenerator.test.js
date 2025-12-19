@@ -1,4 +1,4 @@
-const generatePassword = require("./passwordGenerator");
+const generatePassword = require("../src/PasswordGenerator");
 
 test("şifre belirtilen uzunlukta olmalı", () => {
   expect(generatePassword(8)).toHaveLength(8);

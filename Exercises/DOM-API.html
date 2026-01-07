@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM API Örneği</title>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Ortalar */
+            justify-content: center;
+            height: 100vh; /* Tüm ekranı kaplar */
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333; /* Başlangıç rengi koyu gri */
+            transition: color 0.3s ease; /* Renk değişimi yumuşak olsun */
+        }
+
+        #degistir-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff6f61; /* Buton rengi */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #degistir-btn:hover {
+            background-color: #e65b50; /* Üzerine gelince koyulaşsın */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Merhaba Dünya!</h1>
+    <button id="degistir-btn">Sihri Başlat</button>
+
+    <script>
+        // HTML'deki elemanları seçiyoruz
+        const buton = document.querySelector('#degistir-btn');
+        const baslik = document.querySelector('h1');
+
+        // Olay dinleyicisi (Event Listener) ekliyoruz
+        buton.addEventListener('click', () => {
+            baslik.textContent = "Web API'leri Harika!";
+            baslik.style.color = "blue"; // CSS'i ezip mavi yapar
+        });
+    </script>
+
+</body>
+</html>

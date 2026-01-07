@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Form Data</title>
+</head>
+<body>
+    <h1>JavaScript Forms</h1>
+    <form id="signIn">
+        <input type="text" name="username" placeholder="Kullanıcı Adı">
+        <input type="password" name="password" placeholder="Parola">
+        <button type="submit">Giriş Yap</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('signIn');
+        
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log(event);
+            
+            const usernameElem = form.querySelector('[name="username"]');
+            const passwordElem = form.querySelector('[name="password"]');
+            
+            console.group('querySelector');
+            console.log('username', usernameElem);
+            console.log('password', passwordElem.value);
+            console.groupEnd();
+            
+            const data = new FormData(event.currentTarget);
+            const username = data.get('username');
+            const password = data.get('password');
+            
+            console.group('FormData');
+            console.log('username', username);
+            console.log('password', password);
+            console.groupEnd();
+            
+            // Validasyon kontrolleri
+            if (username === '' || password === '') {
+                alert('Kullanıcı adı ya da şifre boş olamaz.');
+            } else if (username.length < 3) {
+                alert('Kullanıcı adı 3 karakterden az olamaz.');
+            } else if (password.length < 6) {
+                alert('Parola 6 karakterden az olamaz.');
+            } else {
+                const rawdata = {
+                    username,
+                    password,
+                    authId: 'aradasdasfdjnfsdf',
+                };
+                
+                console.log('request', rawdata);
+            }
+        });
+    </script>
+</body>
+</html>

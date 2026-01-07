@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Web API Örnek Uygulaması</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 500px; margin: auto; }
+        .kutu { border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        input { padding: 8px; width: 70%; }
+        button { padding: 8px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        ul { list-style-type: none; padding: 0; }
+        li { background: #f4f4f4; margin: 5px 0; padding: 10px; display: flex; justify-content: space-between; }
+        .sil-btn { background-color: #dc3545; font-size: 12px; }
+        #motivasyon { font-style: italic; color: #555; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="kutu">
+    <h2>Yapılacaklar Listesi</h2>
+    
+    <div id="motivasyon">Yükleniyor...</div>
+
+    <input type="text" id="yeniGorev" placeholder="Yeni görev ekle...">
+    <button id="ekleBtn">Ekle</button>
+
+    <ul id="liste">
+        </ul>
+</div>
+
+<script>
+    // --- 1. DOM API: Elementleri Seçme ---
+    const girisKutusu = document.getElementById('yeniGorev');
+    const ekleButonu = document.getElementById('ekleBtn');
+    const liste = document.getElementById('liste');
+    const motivasyonKutusu = document.getElementById('motivasyon');
+
+    // --- 2. FETCH API: Dış Dünyadan Veri Çekme ---
+    // Sayfa açılınca rastgele bir kullanıcı/söz çekelim
+    function sozGetir() {
+        fetch('https://jsonplaceholder.typicode.com/users/1')
+            .then(response => response.json()) // Gelen veriyi JSON'a çevir
+            .then(data => {
+                // DOM API kullanarak yazıyı güncelleme
+                motivasyonKutusu.textContent = `"${data.company.catchPhrase}" - İlham Veren Bot`;
+            })
+            .catch(hata => {
+                motivasyonKutusu.textContent = "Söz yüklenirken hata oluştu.";
+                console.error('Fetch Hatası:', hata);
+            });
+    }
+
+    // --- 3. LOCAL STORAGE API: Veriyi Tarayıcıda Saklama ---
+    function verileriKaydet() {
+        // Listedeki tüm li elementlerinin metinlerini alıp bir diziye koyuyoruz
+        const gorevler = [];
+        document.querySelectorAll('#liste li span').forEach(item => {
+            gorevler.push(item.textContent);
+        });
+        // Diziyi string'e çevirip saklıyoruz
+        localStorage.setItem('yapilacaklar', JSON.stringify(gorevler));
+    }
+
+    function verileriYukle() {
+        const kayitliGorevler = JSON.parse(localStorage.getItem('yapilacaklar'));
+        
+        if (kayitliGorevler) {
+            kayitliGorevler.forEach(gorevMetni => {
+                listeyeEkle(gorevMetni); // Her bir kayıtlı görev için ekleme fonksiyonunu çağır
+            });
+        }
+    }
+
+    // --- YARDIMCI FONKSİYON: Listeye Eleman Ekleme (DOM Manipülasyonu) ---
+    function listeyeEkle(metin) {
+        const li = document.createElement('li'); // Yeni <li> oluştur
+        
+        const span = document.createElement('span'); // Yazı için <span>
+        span.textContent = metin;
+        
+        const silBtn = document.createElement('button'); // Silme butonu
+        silBtn.textContent = "Sil";
+        silBtn.className = "sil-btn";
+        
+        // Silme butonuna tıklanınca ne olacak?
+        silBtn.onclick = function() {
+            li.remove(); // DOM API: Elementi sayfadan kaldır
+            verileriKaydet(); // Güncel hali tekrar kaydet
+        };
+
+        li.appendChild(span);
+        li.appendChild(silBtn);
+        liste.appendChild(li); // Listeye ekle
+    }
+
+    // --- OLAY DİNLEYİCİLERİ (Event Listeners) ---
+    
+    // "Ekle" butonuna basınca
+    ekleButonu.addEventListener('click', () => {
+        const metin = girisKutusu.value;
+        if (metin !== "") {
+            listeyeEkle(metin);
+            verileriKaydet(); // Yeni görevi storage'a kaydet
+            girisKutusu.value = ""; // Kutuyu temizle
+        } else {
+            alert("Lütfen bir görev yazın!"); // Tarayıcı API'si (alert)
+        }
+    });
+
+    // Sayfa ilk açıldığında çalışacaklar
+    sozGetir();      // Fetch API çalışır
+    verileriYukle(); // LocalStorage'dan eski veriler gelir
+
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- Kodun Adım Adım Analizi
+Bu kodda her şey birbiriyle nasıl konuşuyor?
+
+1. Fetch API Kısmı (sozGetir fonksiyonu)
+Ne yapıyor? fetch() komutu internete çıkar, jsonplaceholder adresine gider ve veri ister.
+
+Detay: Bu işlem biraz zaman alacağı için .then() (sonra) yapısını kullanırız. "Veri gelince JSON'a çevir, sonra (then) bu veriyi alıp motivasyonKutusunun içine yaz" deriz.
+
+Sonuç: Sayfa açıldığında "Multi-layered client-server neural-net" gibi havalı (ama anlamsız) bir şirket sloganı görürsünüz. Bu veri sizin bilgisayarınızda değil, bir sunucuda duruyordur.
+
+2. DOM API Kısmı (listeyeEkle fonksiyonu)
+Ne yapıyor? JavaScript içinde yoktan HTML elementleri yaratır (document.createElement).
+
+Detay: Biz HTML sayfasına elimizle <li> yazmadık. Kullanıcı butona basınca JavaScript <li>, <span> ve <button> etiketlerini hafızada oluşturur, içlerini doldurur ve en son liste.appendChild(li) diyerek görünür sayfaya monte eder.
+
+Etkileşim: Sil butonuna basıldığında li.remove() diyerek o elementi sayfadan söküp atar.
+
+3. LocalStorage API Kısmı (verileriKaydet ve verileriYukle)
+Sorun neydi? Sayfayı yenilerseniz (F5 yaparsanız), JavaScript hafızası sıfırlanır ve eklediğiniz görevler uçar gider.
+
+Çözüm: localStorage.setItem komutu ile tarayıcının sabit diskine küçük bir not bırakırız.
+
+Mantık:
+
+Her yeni görev eklediğimizde veya sildiğimizde listeyi tararız, metinleri bir diziye (["Ekmek al", "Kod yaz"]) çeviririz.
+
+Bu diziyi JSON.stringify ile tek bir uzun metne ("['Ekmek al', 'Kod yaz']") dönüştürüp kaydederiz.
+
+Sayfa tekrar açıldığında (verileriYukle), localStorage.getItem ile bu metni geri alır, JSON.parse ile tekrar diziye çevirir ve sanki kullanıcı yeni yazmış gibi ekrana basarız.
+
+Bu örnek, modern web uygulamalarının (React, Vue veya Angular kullananlar dahil) temel çalışma prensibidir: Veriyi çek (Fetch), Ekrana bas (DOM), Durumu koru (Storage). -->

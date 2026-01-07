@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Takım Çalışma Panosu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h2>Takım Çalışma Panosu</h2>
+            <p class="desc">Günlük görevlerinizi kategoriye göre takip edin.</p>
+        </header>
+
+        <!-- Motivation Section -->
+        <section class="motivation-section">
+            <div class="motivation">
+                <iframe src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=light" width="100%"
+                    height="120" frameborder="0" style="border: none; border-radius: 8px; display: block;"
+                    loading="lazy"></iframe>
+            </div>
+        </section>
+
+        <!-- Add Task Section -->
+        <section class="add-task-section">
+            <div class="add-task-area">
+                <input type="text" id="taskInput" placeholder="Görev adını yazın...">
+                <select id="categorySelect">
+                    <option value="general">Genel</option>
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="js">JavaScript</option>
+                </select>
+                <button onclick="addTask()">Görev Ekle</button>
+            </div>
+        </section>
+
+        <!-- Tasks List Section -->
+        <section class="tasks-section">
+            <h3>Görev Listesi</h3>
+            <div id="tasksArea" class="task-list">
+
+                <article class="task-item html-bg" onclick="toggleComplete(this)">
+                    <span class="task-content">İrem ve Ali Efe ana HTML yapısını kuracak</span>
+                    <span class="completion-status">YAPILACAK</span>
+                </article>
+
+                <article class="task-item css-bg" onclick="toggleComplete(this)">
+                    <span class="task-content">Kaan düzen, hizalama, flexbox, tamamlanan görevlerin farklı
+                        görünmesi.</span>
+                    <span class="completion-status">YAPILACAK</span>
+                </article>
+
+                <article class="task-item js-bg" onclick="toggleComplete(this)">
+                    <span class="task-content">Hakan, HTML içindeki kodlar JavaScript'e nasıl etki eder.</span>
+                    <span class="completion-status">YAPILACAK</span>
+                </article>
+
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

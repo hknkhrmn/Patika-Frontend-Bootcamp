@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ad = prompt("İsminizi Giriniz :");
+        let tckn = prompt("TCKN Giriniz :");
+
+
+
+        kontrolEt(ad, tckn);
+
+        function kontrolEt(ad, tckn){
+
+            if(ad!=""){
+                if(tckn.length ==11){
+                    console.log("İsim ve tckn problemsiz girildi");
+                } else{
+                    console.log("Lütfen tc nizi 11 karakter olarak giriniz");
+                }
+            }else{
+                console.log("Lütfen isim alanını boş bırakmayın!!!");
+            }
+        }
+
+//TCKN ve isimi doğrumu diye kontrol ediyor değilse doğru giriniz uyarısı veriyor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

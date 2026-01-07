@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays (Diziler)</title>
+
+</head>
+
+<body>
+    <!-- Diziler sıralı veri koleksiyonlarını saklamak için kullanılır. 
+     Her elemanın bir indeks numarası vardır.(0'dan başlar.) -->
+    <script>
+        //Array Oluşturma
+        // 1. Literal syntax
+        const meyveler = ["elma", "armut", "muz"];
+
+        // 2. new Array() ile
+        const sayilar = new Array(1, 2, 3, 4, 5);
+
+        // 3. Boş array
+        const bosArray = [];
+    </script>
+    <!-- Array Metodları -->
+    <script>
+        //Ekleme - Çıkarma
+        const liste = [1, 2, 3];
+        // push() - sona ekler
+        liste.push(4); // [1, 2, 3, 4]
+
+        // pop() - sondan çıkarır
+        liste.pop(); // [1, 2, 3]
+
+        // unshift() - başa ekler
+        liste.unshift(0); // [0, 1, 2, 3]
+
+        // shift() - baştan çıkarır
+        liste.shift(); // [1, 2, 3]
+
+        // splice() - belirli pozisyondan ekle/çıkar
+        liste.splice(1, 1, "yeni"); // [1, "yeni", 3]
+
+    </script>
+    
+    
+
+
+</body>
+
+</html>

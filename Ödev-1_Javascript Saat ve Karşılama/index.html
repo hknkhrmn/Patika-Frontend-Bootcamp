@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="hosgeldin">Hoş Geldiniz! </h1>
+        <div class="time" id="time"></div>
+        <div class="date" id="date"></div>
+    </div>
+
+    <script>
+        // Sayfa açılınca isim sor
+        const isim = prompt("Adınızı girin:");
+        
+        if (isim) {
+            alert("Hoşgeldin " + isim);
+            document.getElementById('hosgeldin').textContent = "Hoş Geldin, " + isim + "! ";
+        }
+        
+        // Saat ve tarihi güncelle
+        function guncelle() {
+            const simdi = new Date();
+            
+            // Saati al
+            const saat = simdi.toLocaleTimeString('tr-TR');
+            
+            // Tarihi al
+            const tarih = simdi.toLocaleDateString('tr-TR', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            
+            // Ekrana yazdır
+            document.getElementById('time').textContent = saat;
+            document.getElementById('date').textContent = tarih;
+        }
+        
+        // İlk açılışta çalıştır
+        guncelle();
+        
+        // Her saniye güncelle
+        setInterval(guncelle, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+    <!-- Objects (Nesneler)
+Objeler, key-value (anahtar-değer) çiftlerini saklayan veri yapılarıdır. 
+JavaScript'te nesneler, özellikleri (properties) ve metodları (methods) bir arada tutmak için kullanılır. -->
+    <!-- 1. Object Oluşturma -->
+    <script>
+        // 1. Literal syntax (en yaygın)
+        const kisi = {
+            ad: "Ahmet",
+            soyad: "Yılmaz",
+            yas: 25
+        };
+
+        // 2. new Object() ile
+        const kisi2 = new Object();
+        kisi2.ad = "Mehmet";
+
+        // 3. Object.create() ile
+        const proto = { selamla: function () { return "Merhaba"; } };
+        const kisi3 = Object.create(proto);
+    </script>
+
+    <!-- Obje Özelliklerine Erişim -->
+    <script>
+        const araba = {
+            marka: "Toyota",
+            model: "Corolla",
+            yil: 2023
+        };
+
+        // Nokta notasyonu
+        console.log(araba.marka); // "Toyota"
+
+        // Köşeli parantez notasyonu
+        console.log(araba["model"]); // "Corolla"
+
+        // Dinamik anahtar erişimi
+        const anahtar = "yil";
+        console.log(araba[anahtar]); // 2023
+    </script>
+    <!-- Önemli object metodları -->
+    <script>
+        const urun = { ad: "Laptop", fiyat: 15000, stok: 5 };
+
+        // Object.keys() - anahtarları dizi olarak döner
+        console.log(Object.keys(urun)); // ["ad", "fiyat", "stok"]
+
+        // Object.values() - değerleri dizi olarak döner
+        console.log(Object.values(urun)); // ["Laptop", 15000, 5]
+
+        // Object.entries() - [anahtar, değer] çiftlerini döner
+        console.log(Object.entries(urun));
+        // [["ad", "Laptop"], ["fiyat", 15000], ["stok", 5]]
+
+        // Object.assign() - objeleri birleştirir
+        const yeniUrun = Object.assign({}, urun, { indirim: true });
+    </script>
+</body>
+
+</html>

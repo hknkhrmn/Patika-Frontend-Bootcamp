@@ -1,0 +1,103 @@
+<!-- Pratik Ödevi:
+
+Bir button elementi oluşturun ve bu butona tıklandığında arka plan rengini değiştiren bir olay ekleyin.
+
+Bir input alanı oluşturun ve bu alana bir şeyler yazıldığında girilen değeri konsola yazdırın. -->
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ve Olay Uygulaması</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #3498db;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>DOM Olayları Uygulaması</h1>
+
+    <button id="renkDegistirici">Arka Plan Rengini Değiştir</button>
+    <p>Tüm sayfanın (body) arka plan rengi her tıklandığında değişecektir.</p>
+
+    <hr>
+
+    <div class="container">
+        <h2>Input Alanı İzleyicisi</h2>
+        <input type="text" id="girdiAlani" placeholder="Buraya bir şeyler yazın...">
+        <p>Yazdığınız değer anlık olarak tarayıcınızın **Konsoluna** yazdırılacaktır.</p>
+    </div>
+
+    <script>
+        // === SENARYO 1: BUTON TIKLANDIĞINDA RENK DEĞİŞTİRME ===
+
+        // 1. Gerekli DOM öğelerini seç
+        const renkButonu = document.getElementById('renkDegistirici');
+        const bodyElementi = document.body; // Tüm sayfa gövdesi
+
+        // Renk listesi
+        const renkler = ['#e74c3c', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#3498db'];
+        let mevcutRenkIndex = 0;
+
+        // 2. Olay dinleyicisini (Event Listener) ekle
+        renkButonu.addEventListener('click', function() {
+            
+            // Renk listesindeki bir sonraki renge geç
+            mevcutRenkIndex = (mevcutRenkIndex + 1) % renkler.length;
+            const yeniRenk = renkler[mevcutRenkIndex];
+            
+            // body elementinin stilini (arka plan rengini) değiştir
+            bodyElementi.style.backgroundColor = yeniRenk;
+            
+            // Butonun rengini de zıt bir renkle değiştir (isteğe bağlı estetik)
+            renkButonu.style.backgroundColor = renkler[(mevcutRenkIndex + 3) % renkler.length];
+        });
+
+
+        // === SENARYO 2: INPUT ALANINA YAZILANLARI KONSOLA YAZDIRMA ===
+
+        // 1. Gerekli DOM öğesini seç
+        const girdiAlani = document.getElementById('girdiAlani');
+
+        // 2. Olay dinleyicisini ekle (input olayı her klavye tuşuna basıldığında tetiklenir)
+        girdiAlani.addEventListener('input', function(event) {
+            
+            // Olayın gerçekleştiği öğenin (input) güncel değerini al
+            const girilenDeger = event.target.value;
+
+            // Değeri tarayıcı konsoluna yazdır
+            console.log("Input Değeri:", girilenDeger);
+        });
+
+    </script>
+
+</body>
+</html>

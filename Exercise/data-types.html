@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Veri Tipleri</title>
+    <style>
+        h1 {
+            color: blue;
+        }
+
+        h2 {
+            color: red;
+        }
+
+        body {
+            background-color: bisque;
+        }
+    </style>
+</head>
+
+<body>
+    <!--<h1>İlkel(primative) veri Tipleri</h1>-->
+    <!-- <h2>1.Number(Sayı)</h2> -->
+    <!-- <p>Hem tam sayılar hem de ondalıklı sayılar için kullanılır.</p> -->
+    <script>
+        let tamSayi = 42;
+        let ondalik = 3.14;
+        let negatif = -10;
+        let uslu = 2e3; // 2000
+        let sonsuz = Infinity;
+        let sayiDegil = NaN; // Not a Number
+
+        console.log(typeof tamSayi); // "number"S 
+    </script>
+    <!-- <h2>String (metin)</h2>
+    <p>Metin verilerini saklar. Tek tırnak,çift tırnak veya backtick ile tanımlanabilir.</p> -->
+    <script>
+        let tekTirnak = 'Merhaba';
+        let ciftTirnak = "Dünya";
+        let templateLiteral = `Merhaba ${ciftTirnak}`; // Template literal
+
+        console.log(templateLiteral); // "Merhaba Dünya"
+        console.log(typeof tekTirnak); // "string"
+    </script>
+    <!-- 3) Boolean (Mantıksal) -->
+    <!-- sadece true veya false değerlerini alır. -->
+    <script>
+        let dogruMu = true;
+        let yanlisMi = false;
+        let yasBuyukMu = 18 > 16; // true
+
+        console.log(typeof dogruMu); // "boolean"
+    </script>
+
+    <!-- 4. Undefined
+    Tanımlanmış ama değer atanmamış değişkenler için otomatik atanır. -->
+    <script>
+        let tanimsiz;
+        console.log(tanimsiz); // undefined
+        console.log(typeof tanimsiz); // "undefined"
+    </script>
+    <!-- 5. Null
+Kasıtlı olarak "değer yok" anlamını ifade eder. -->
+    <script>
+        let bos = null;
+        console.log(bos); // null
+        console.log(typeof bos); // "object" (JavaScript'te bilinen bir hata)
+    </script>
+    <!-- 6. Symbol
+Benzersiz ve değişmez tanımlayıcılar oluşturmak için kullanılır (ES6+). -->
+    <script>
+        let sembol1 = Symbol('aciklama');
+        let sembol2 = Symbol('aciklama');
+        console.log(sembol1 === sembol2); // false (her symbol benzersizdir)
+    </script>
+    <!-- 7. BigInt
+Çok büyük tam sayılar için kullanılır (ES2020+). -->
+    <script>
+        let buyukSayi = 9007199254740991n;
+        let cokBuyuk = BigInt("12345678901234567890");
+        console.log(typeof buyukSayi); // "bigint"
+    </script>
+    <!-- Referans (Object) Tipleri
+1. Object (Nesne)
+Anahtar-değer çiftlerini saklar. -->
+    <script>
+        let kisi = {
+            ad: "Ahmet",
+            yas: 25,
+            sehir: "İstanbul"
+        };
+
+        console.log(kisi.ad); // "Ahmet"
+        console.log(typeof kisi); // "object"
+    </script>
+    <!-- 2. Array (Dizi)
+Sıralı veri koleksiyonları için kullanılır. -->
+    <script>
+        let meyveler = ["elma", "armut", "muz"];
+        let karisik = [1, "iki", true, null];
+
+        console.log(meyveler[0]); // "elma"
+        console.log(typeof meyveler); // "object"
+        console.log(Array.isArray(meyveler)); // true
+    </script>
+    <!-- 3. Function (Fonksiyon)
+Yeniden kullanılabilir kod blokları. -->
+    <script>
+        function selamla(isim) {
+            return `Merhaba ${isim}!`;
+        }
+
+        let topla = function (a, b) {
+            return a + b;
+        };
+
+        let carp = (x, y) => x * y; // Arrow function
+
+        console.log(typeof selamla); // "function"
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Öğreniyorum</title>
+</head>
+
+<body>
+    <h1>JavaScript Test</h1>
+
+    <script>
+        // Değişken Tanımlama Yöntemleri
+        //JavaScript'te 3 farklı şekilde değişken tanımlayabilirsiniz:
+
+        //1. let - Modern ve önerilen yöntem
+        // Değeri sonradan değiştirilebilir
+        //Blok kapsamlıdır (block-scoped)
+        //Aynı isimde tekrar tanımlanamaz
+
+        let isim = "Ahmet";
+        let yas = 25;
+        let sehir = "İstanbul";
+
+
+
+        //2. const - Sabit değerler için
+        // Değeri sonradan değiştirilemez
+        //Tanımlanırken mutlaka değer atanmalı
+        //Blok kapsamlıdır
+
+        const PI = 3.14159;
+        const ULKE = "Türkiye";
+
+        //3. var - eski yöntem
+        //Fonksiyon kapsamlıdır.
+        //Hoisting sorunu yaratabilir.
+
+        var eskiYontem = "kullanma";
+
+        //Değişken İsimlendirme Kuralları
+
+        //Harf, alt çizgi (_) veya dolar işareti ($) ile başlamalı
+        //Rakamla başlayamaz
+        //Türkçe karakter kullanılabilir ama önerilmez
+        //Boşluk içeremez
+        //Büyük-küçük harf duyarlıdır
+
+
+        //let isim = "geçerli";
+        //let _gizli = "geçerli";
+        //let $deger = "geçerli";
+        //let 3sayi = "HATA!"; // Geçersiz
+        //let user-name = "HATA!"; // Geçersiz
+
+    </script>
+
+    <h2>VERİ TİPLERİ</h2>
+
+  
+    <script>
+          // String (Metin)
+    let mesaj = "Merhaba dünya";
+
+    // Number (Sayı)
+    let sayi = 42;
+    let ondalik = 3.14;
+
+    // Boolean (Mantıksal)
+    let aktif = true;
+    let kapali = false;
+
+    // Undefined (Tanımsız)
+    let tanimsiz;
+
+    // Null (Boş)
+    let bos = null;
+
+    // Object (Nesne)
+    let kisi = {
+    ad: "Ali",
+    yas: 30
+    };
+
+    // Array (Dizi)
+    let renkler = ["kırmızı", "mavi", "yeşil"];
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+<body>
+    <h1>Operators (Operatörler) Açıklama Yazısı:
+</h1>
+<p>JavaScript'te operatörler, değişkenler ve değerler üzerinde işlemler gerçekleştirmek için kullanılır. Farklı türde operatörler vardır:
+</p>
+<h2>Aritmetik Operatörler:</h2>
+
+<p>+ (Toplama): İki sayıyı toplar veya iki stringi birleştirir.</p>
+
+<p>- (Çıkarma): İki sayıyı çıkarır.</p>
+
+<p>* (Çarpma): İki sayıyı çarpar.</p>
+
+<p>/ (Bölme): İki sayıyı böler.</p>
+
+<p>% (Modül): Bir sayının diğerine bölümünden kalanı verir</p>
+
+<p>** (Üs Alma): Bir sayıyı diğerinin kuvvetine yükseltir.</p>
+
+<h2>Atama Operatörleri:</h2>
+
+<p>= (Atama): Bir değişkene değer atar.</p>
+
+<p></p>+= (Toplama ve Atama): Bir değişkene bir değer ekler ve sonucu değişkene atar.
+
+<p></p>-= (Çıkarma ve Atama): Bir değişkenden bir değer çıkarır ve sonucu değişkene atar.
+
+<p></p>*= (Çarpma ve Atama): Bir değişkeni bir değerle çarpar ve sonucu değişkene atar.
+
+<p></p>/= (Bölme ve Atama): Bir değişkeni bir değere böler ve sonucu değişkene atar.
+
+<p></p>%= (Modül ve Atama): Bir değişkenin değerini mod alır ve sonucu değişkene atar.
+
+<h2>Karşılaştırma Operatörleri:</h2>
+
+<p></p>== (Eşittir): İki değeri eşitlik açısından karşılaştırır (tür dönüşümü yapabilir).
+
+<p></p> === (Sıkı Eşittir): İki değeri tür ve içerik açısından karşılaştırır (tür dönüşümü yapmaz).
+
+<p></p> != (Eşit Değildir): İki değeri eşit olmama açısından karşılaştırır.
+
+<p></p> !== (Sıkı Eşit Değildir): İki değeri tür ve içerik açısından eşit olmama açısından karşılaştırır.
+
+<p></p> > (Büyüktür): Bir değerin diğerinden büyük olup olmadığını kontrol eder.
+
+<p></p> < (Küçüktür): Bir değerin diğerinden küçük olup olmadığını kontrol eder.
+
+<p></p> >= (Büyük veya Eşittir): Bir değerin diğerine büyük veya eşit olup olmadığını kontrol eder.
+
+<p></p> <= (Küçük veya Eşittir): Bir değerin diğerine küçük veya eşit olup olmadığını kontrol eder.
+
+<h2>Mantıksal Operatörler:</h2>
+
+<p></p> && (VE): İki ifadenin doğru olup olmadığını kontrol eder.
+
+<p></p> || (VEYA): İki ifadeden birinin doğru olup olmadığını kontrol eder.
+
+<p></p> ! (DEĞİL): Bir ifadenin tersini alır (doğruysa yanlış, yanlışsa doğru yapar).
+   <script>
+    // Aritmetik Operatörler
+let x = 10;
+let y = 5;
+console.log(x + y); // 15
+console.log(x - y); // 5
+console.log(x * y); // 50
+console.log(x / y); // 2
+console.log(x % y); // 0
+
+// Atama Operatörleri
+let a = 10;
+a += 5; // a = a + 5
+console.log(a); // 15
+
+// Karşılaştırma Operatörleri
+console.log(x == y); // false
+console.log(x === 10); // true
+console.log(x != y); // true
+console.log(x > y); // true
+
+// Mantıksal Operatörler
+let isTrue = true;
+let isFalse = false;
+console.log(isTrue && isFalse); // false
+console.log(isTrue || isFalse); // true
+console.log(!isTrue); // false
+   </script> 
+</body>
+</html>

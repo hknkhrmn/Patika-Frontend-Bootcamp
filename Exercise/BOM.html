@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOM Örneği</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        #bilgiler {
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🖥️ Tarayıcı Nesne Modeli (BOM) Örneği</h1>
+
+    <button id="alertGoster">BOM Uyarısı Göster</button>
+
+    <div id="bilgiler">
+        <h2>Tarayıcı Bilgileri (BOM)</h2>
+        <p>Tarayıcı Bilgileri aşağıda gösterilecektir.</p>
+    </div>
+
+    <script>
+        // 1. DOM Öğelerini Seçme
+        const bilgilerDiv = document.getElementById('bilgiler');
+        const alertButton = document.getElementById('alertGoster');
+
+        // ----------------------------------------------------
+        // 2. BOM İle Etkileşim: Bilgi Görüntüleme
+        // ----------------------------------------------------
+
+        function bomBilgileriniGoster() {
+            // navigator: Tarayıcı bilgileri
+            const tarayiciAdi = window.navigator.appName || "Mevcut Değil";
+            const platform = window.navigator.platform || "Mevcut Değil";
+
+            // location: Geçerli URL bilgisi
+            const mevcutUrl = window.location.href;
+
+            // screen: Kullanıcının ekran bilgileri (çoğu zaman güvenli değildir, bu nedenle window.screen yerine direkt screen kullanılır)
+            const ekranGenisligi = screen.width;
+            const ekranYuksekligi = screen.height;
+
+
+            // Bilgileri DOM'a Ekleme
+            bilgilerDiv.innerHTML = `
+                <h2>Tarayıcı Bilgileri (BOM)</h2>
+                <p><strong>URL (location):</strong> ${mevcutUrl}</p>
+                <p><strong>Tarayıcı Adı (navigator):</strong> ${tarayiciAdi}</p>
+                <p><strong>İşletim Sistemi (navigator):</strong> ${platform}</p>
+                <p><strong>Ekran Çözünürlüğü (screen):</strong> ${ekranGenisligi} x ${ekranYuksekligi}</p>
+            `;
+        }
+
+        // ----------------------------------------------------
+        // 3. BOM İle Etkileşim: Metot Kullanımı (window.alert)
+        // ----------------------------------------------------
+
+        alertButton.addEventListener('click', function() {
+            // window.alert() metodu, window nesnesine aittir.
+            // "window." yazmaya gerek yoktur, çünkü global bir metottur.
+            alert('Bu, window.alert() metodu ile gösterilen bir BOM uyarısıdır!');
+        });
+
+
+        // Sayfa yüklendiğinde bilgileri göster
+        bomBilgileriniGoster();
+
+    </script>
+
+</body>
+</html>

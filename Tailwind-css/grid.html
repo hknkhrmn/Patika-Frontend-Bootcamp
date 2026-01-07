@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS grid</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <!-- Başlık - tüm sütunları kaplar -->
+  <div class="md:col-span-3 bg-blue-500 p-4">
+    <h1>Başlık</h1>
+  </div>
+  
+  <!-- Sidebar -->
+  <div class="md:col-span-1 bg-gray-200 p-4">
+    Sidebar
+  </div>
+  
+  <!-- Ana İçerik -->
+  <div class="md:col-span-2 bg-green-900 p-4">
+    Ana İçerik
+  </div>
+  
+  <!-- Footer - tüm sütunları kaplar -->
+  <div class="md:col-span-3 bg-gray-800 text-white p-4">
+    Footer
+  </div>
+</div>
+  
+
+</body>
+</html>
+  

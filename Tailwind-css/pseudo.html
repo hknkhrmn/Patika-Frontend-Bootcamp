@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS Typography</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <div class="flex items-center space-x-3">
+    
+  <input id="custom-checkbox" type="checkbox" class="hidden peer" /> 
+  <label for="custom-checkbox" class="w-6 h-6 border-2 border-gray-400 rounded cursor-pointer flex items-center justify-center transition
+                 peer-checked:bg-blue-500 peer-checked:border-blue-500">
+    
+    <svg class="h-4 w-4 text-white opacity-0 peer-checked:opacity-100 transition duration-300" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 13.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+    </svg>
+
+  </label>
+  
+  <label for="custom-checkbox" class="text-gray-700 cursor-pointer">
+      Beni Hatırla
+  </label>
+</div>
+</body>
+</html>

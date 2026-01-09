@@ -1,6 +1,10 @@
-function UserInfo() {
+// src/UserInfo.jsx
+function UserInfo({ name, age }) {
   return (
-    <div></div>
+    <div>
+      <p>Ad: {name}</p>
+      <p>Yaş: {age}</p>
+    </div>
   );
 }
 

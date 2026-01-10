@@ -56,3 +56,5 @@ Tablet/Desktop: ≥ 768px (çok sütunlu grid)
 
 
 Not: Görseller placeholder olarak harici URL'lerden çekilmektedir. Production'da kendi görsellerinizi kullanın.
+
+![](./assets/ss%20landing%20page.png)

@@ -2,7 +2,7 @@
 
 A modern and responsive sports center website built with React and Vite. This project is a complete reimplementation of a vanilla JavaScript project using React components and hooks.
 
-![Sports Center Preview](https://sportscenter4react.netlify.app/)
+![Sports Center Preview](./public/assets/sportscenter4react.png)
 
 ## 🚀 Live Demo
 

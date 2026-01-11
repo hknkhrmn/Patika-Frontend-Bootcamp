@@ -5,7 +5,7 @@ A simple and fun dice game built with React where you can challenge the computer
 ## 🎮 Live Demo
 
 [Play the Game Here](https://hkn-dice-game1.netlify.app/)
-> Deploy this project to see it live! (Vercel, Netlify, or GitHub Pages recommended)
+
 
 ## 📸 Demo
 

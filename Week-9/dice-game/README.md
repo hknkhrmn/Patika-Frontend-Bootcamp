@@ -104,8 +104,8 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
-- Dice images from [source/credit if applicable]
-- Inspired by classic dice games
+- Dice images from [Patika Dev]
+- Inspired by Patika dice games
 
 ---
 

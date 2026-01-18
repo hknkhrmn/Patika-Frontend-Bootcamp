@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'; // CSS dosyasını buraya bağladık
+import './App.css'; 
 
 const INITIAL_MONEY = 100000000000;
 
@@ -11,7 +11,7 @@ const PRODUCTS = [
   { id: 5, name: 'Ferrari', price: 250000, image: '🏎️' },
   { id: 6, name: 'Yacht', price: 7500000, image: '🛥️' },
   { id: 7, name: 'Skyscraper', price: 850000000, image: '🏙️' },
-  // Buraya istediğin kadar ürün ekleyebilirsin
+  
 ];
 
 function App() {

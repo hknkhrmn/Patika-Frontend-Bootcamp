@@ -1,0 +1,132 @@
+/* Genel Ayarlar */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f2f6;
+}
+
+.container {
+  padding-bottom: 50px;
+}
+
+/* Header ve Para Çubuğu */
+.header {
+  background-color: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+.bill-img {
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.money-bar {
+  background-color: #2ecc71;
+  color: white;
+  padding: 20px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Ürün Izgarası */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-emoji {
+  font-size: 60px;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Butonlar */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+.btn-sell { background-color: #e74c3c; color: white; }
+.btn-buy { background-color: #2ecc71; color: white; }
+
+.btn:disabled {
+  background-color: #f1f2f6;
+  color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.count-input {
+  width: 60px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Fiş Alanı */
+.receipt-container {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.total-line {
+  border-top: 2px solid #333;
+  margin-top: 15px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 900;
+  font-size: 1.4rem;
+}

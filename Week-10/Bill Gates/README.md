@@ -11,6 +11,8 @@ Try spending $100 billion on anything you want! Buy luxury cars, private jets, i
 
 [View on live](https://patikaprojectbillgates.netlify.app/)
 
+![](./public/images/demo.gif)
+
 ## ✨ Features
 
 - **Real-time Balance Tracking**: Watch your remaining money update as you shop

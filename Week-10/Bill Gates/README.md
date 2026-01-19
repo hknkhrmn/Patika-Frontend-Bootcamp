@@ -1,10 +1,15 @@
 # 💰 Spend Bill Gates' Money
 
-An interactive web application where you can experience spending Bill Gates' fortune on various items - from a simple coffee to a Premier League football club!
+An interactive web application where you can experience spending Bill Gates' fortune on various items - from a simple coffee to a SuperLig football club!
+
+> 📚 **Note**: This project was developed as part of **Patika.dev Frontend Bootcamp - Week 10 Assignment**.
+
 
 ## 🎮 Demo
 
 Try spending $100 billion on anything you want! Buy luxury cars, private jets, islands, or even a football team. The choice is yours!
+
+![Demo](https://patikaprojectbillgates.netlify.app/)
 
 ## ✨ Features
 

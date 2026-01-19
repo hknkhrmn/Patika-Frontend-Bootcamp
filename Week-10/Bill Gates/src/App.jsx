@@ -4,14 +4,18 @@ import './App.css';
 const INITIAL_MONEY = 100000000000;
 
 const PRODUCTS = [
-  { id: 1, name: 'Big Mac', price: 5, image: '🍔' },
-  { id: 2, name: 'Movie Ticket', price: 12, image: '🎟️' },
-  { id: 3, name: 'Video Game', price: 60, image: '🎮' },
-  { id: 4, name: 'Smartphone', price: 1000, image: '📱' },
-  { id: 5, name: 'Ferrari', price: 250000, image: '🏎️' },
-  { id: 6, name: 'Yacht', price: 7500000, image: '🛥️' },
-  { id: 7, name: 'Skyscraper', price: 850000000, image: '🏙️' },
-  
+  { id: 1, name: 'Kahve', price: 3, image: 'images/kahve.webp' },
+  { id: 2, name: 'Netflix Aboneliği ', price: 15, image: 'images/netflix.png' },
+  { id: 3, name: 'AirPods MAX', price: 250, image: 'images/airpods.webp' },
+  { id: 4, name: 'PlayStation 5 Pro', price: 750, image: 'images/ps5pro.jpg' },
+  { id: 5, name: 'iPhone 17 Pro', price: 2000, image: 'images/iphone.webp' },
+  { id: 6, name: 'Rolex Saat', price: 15000, image: 'images/rolex.webp' },
+  { id: 7, name: 'Tesla Model 3', price: 40000, image: 'images/tesla.webp' },
+  { id: 8, name: 'Lamborghini', price: 500000, image: 'images/lamporgini.webp' },
+  { id: 9, name: 'Özel Jet', price: 65000000, image: 'images/özelJet.png' },
+  { id: 10, name: 'Özel Ada', price: 50000000, image: 'images/ada.webp' },
+  { id: 11, name: 'Uzay Turizmi Bileti', price: 250000, image: 'images/uzay.jpg' },
+  { id: 12, name: 'Süperlig Takımı', price: 2000000000, image: 'images/takım.jpg' },
 ];
 
 function App() {
@@ -48,7 +52,16 @@ function App() {
       <div className="product-grid">
         {PRODUCTS.map(product => (
           <div key={product.id} className="product-card">
-            <div className="product-emoji">{product.image}</div>
+            <img 
+              src={product.image} 
+              alt={product.name}
+              style={{
+                width: '150px',
+                height: '150px',
+                objectFit: 'cover',
+                borderRadius: '8px'
+              }}
+            />
             <h3>{product.name}</h3>
             <div className="product-price">${product.price.toLocaleString()}</div>
             

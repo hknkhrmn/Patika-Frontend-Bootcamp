@@ -1,16 +1,46 @@
-# React + Vite
+# 💰 Spend Bill Gates' Money
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive web application where you can experience spending Bill Gates' fortune on various items - from a simple coffee to a Premier League football club!
 
-Currently, two official plugins are available:
+## 🎮 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Try spending $100 billion on anything you want! Buy luxury cars, private jets, islands, or even a football team. The choice is yours!
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Real-time Balance Tracking**: Watch your remaining money update as you shop
+- **Wide Product Range**: 12 different items ranging from $3 to $2 billion
+- **Interactive Shopping**: Buy and sell items with instant feedback
+- **Receipt Generation**: See a detailed breakdown of your purchases
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Visual Product Display**: High-quality images for each product
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React** - Frontend framework
+- **JavaScript (ES6+)** - Programming language
+- **CSS3** - Styling
+- **HTML5** - Structure
+
+
+
+## 🎯 How to Use
+
+1. **Start with $100 Billion**: You begin with Bill Gates' estimated fortune
+2. **Browse Products**: Scroll through various items you can purchase
+3. **Buy Items**: Click the "Buy" button to purchase an item
+4. **Sell Items**: Change your mind? Click "Sell" to get your money back
+5. **View Receipt**: Your purchase summary appears at the bottom showing total spending
+
+
+
+## 📝 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by [Neal.fun's "Spend Bill Gates' Money"](https://neal.fun/spend/)
+- Product images sourced from various free stock photo websites
+- Built as a learning project to practice React state management
+

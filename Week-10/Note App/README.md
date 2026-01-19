@@ -1,16 +1,87 @@
-# React + Vite
+# 📝 Note App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Patika Frontend Bootcamp - Week 10 Project
 
-Currently, two official plugins are available:
+## 📖 About The Project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a modern note-taking application that allows users to create, manage, and search colorful notes. Built with React and Tailwind CSS.
 
-## React Compiler
+[View on live!](https://patikaproject-noteapp.netlify.app/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+[Demo](../Note%20App/public/images/demo.gif)
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Add and delete notes
+- 🎨 6 different color options for notes
+- 🔍 Search/filter notes
+- 📅 Creation date and time for each note
+- 💾 Notes persist during browser session
+- 📱 Responsive design
+
+## 🚀 Technologies Used
+
+- **React** - UI library
+- **Vite** - Fast development environment
+- **Tailwind CSS** - Modern styling framework
+- **JavaScript (ES6+)** - Programming language
+
+## 📦 Installation
+
+To run the project locally:
+
+1. Clone the repository:
+```bash
+git clone <repo-url>
+cd note-app
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open `http://localhost:5173` in your browser
+
+## 🎨 Color Palette
+
+The app offers 6 different color options:
+- 🟡 Yellow
+- 🟠 Orange
+- 🩷 Pink
+- 🟣 Purple
+- 🔵 Blue
+- 🟢 Green
+
+## 💡 Usage
+
+1. **Add a Note:** Write your note in the textarea, select a color, and click "Add Note"
+2. **Search Notes:** Enter keywords in the search box
+3. **Delete a Note:** Click the "Delete" button below each note
+
+## 📂 Project Structure
+
+```
+note-app/
+├── src/
+│   ├── App.jsx          # Main application component
+│   ├── main.jsx         # Entry point
+│   └── index.css        # Tailwind styles
+├── public/
+├── package.json
+├── tailwind.config.js   # Tailwind configuration
+└── vite.config.js       # Vite configuration
+```
+
+## 🎯 Developer
+
+**Patika Frontend Bootcamp** - Week 10 Project
+
+## 📝 License
+
+This project was developed for educational purposes.

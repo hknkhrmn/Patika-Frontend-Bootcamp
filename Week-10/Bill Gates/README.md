@@ -9,7 +9,7 @@ An interactive web application where you can experience spending Bill Gates' for
 
 Try spending $100 billion on anything you want! Buy luxury cars, private jets, islands, or even a football team. The choice is yours!
 
-![Demo](https://patikaprojectbillgates.netlify.app/)
+[View on live](https://patikaprojectbillgates.netlify.app/)
 
 ## ✨ Features
 
@@ -45,6 +45,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 🙏 Acknowledgments
 
+- Developed as part of [Patika.dev](https://www.patika.dev/) Frontend Bootcamp
 - Inspired by [Neal.fun's "Spend Bill Gates' Money"](https://neal.fun/spend/)
 - Product images sourced from various free stock photo websites
 - Built as a learning project to practice React state management

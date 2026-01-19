@@ -8,7 +8,7 @@ This project is a modern note-taking application that allows users to create, ma
 
 [View on live!](https://patikaproject-noteapp.netlify.app/)
 
-[Demo](../Note%20App/public/images/demo.gif)
+![Demo](../Note%20App/public/images/demo.gif)
 
 ## ✨ Features
 

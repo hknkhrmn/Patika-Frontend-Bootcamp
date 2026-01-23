@@ -6,6 +6,18 @@
   --dark-bg: #121212;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Yanlara doğru kayma (scroll) oluşmasını engeller */
+}
+
 .container {
   min-height: 100vh;
   background: radial-gradient(circle, #2c3e50 0%, #000 100%);

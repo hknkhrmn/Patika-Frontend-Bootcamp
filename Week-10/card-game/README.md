@@ -4,7 +4,8 @@ A fast-paced, interactive memory card game built with **React**. Test your memor
 
 ## 🚀 Features
 
-* **Three Difficulty Levels:** * **EASY:** 12 cards (4x3 grid) - Perfect for a quick warm-up.
+* **Three Difficulty Levels:**  
+    * **EASY:** 12 cards (4x3 grid) - Perfect for a quick warm-up.
     * **MEDIUM:** 24 cards (6x4 grid) - The standard challenge.
     * **HARD:** 50 cards (10x5 grid) - Only for true Hall of Famers.
 * **NBA Aesthetics:** Custom UI featuring official NBA team colors (Blue, Red, and Gold).
@@ -19,22 +20,13 @@ A fast-paced, interactive memory card game built with **React**. Test your memor
 * **Lifecycle:** `useEffect` for timer synchronization and match checking.
 * **Styling:** CSS3 (Advanced Grid & Flexbox)
 
-## 📦 Installation & Setup
+## 🔗 Links
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/yourusername/nba-memory-game.git](https://github.com/yourusername/nba-memory-game.git)
-    ```
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
-3.  **Asset Setup:**
-    Ensure your player images are located in `public/images/` and named `card1.jpg` through `card25.jpg`.
-4.  **Launch the game:**
-    ```bash
-    npm run dev
-    ```
+🚀 **[Live Demo](https://senin-canli-demo-linkin.com)** 
+
+💻 **[Source Code](https://github.com/hknkhrmn/Patika-Frontend-Bootcamp/tree/9b51ef00c558eccf7c1b10cdcc36dedad8f73c34/Week-10/card-game)**
+
+
 
 ## 🎮 How to Play
 

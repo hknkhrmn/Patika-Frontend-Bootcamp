@@ -22,7 +22,7 @@ A fast-paced, interactive memory card game built with **React**. Test your memor
 
 ## 🔗 Links
 
-🚀 **[Live Demo](https://nba-memory-game.netlify.app/)** 
+ **[Live Demo](https://nba-memory-game.netlify.app/)** 
 
 
 ## 🎮 How to Play

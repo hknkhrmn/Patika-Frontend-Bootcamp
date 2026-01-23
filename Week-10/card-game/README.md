@@ -24,9 +24,6 @@ A fast-paced, interactive memory card game built with **React**. Test your memor
 
 🚀 **[Live Demo](https://nba-memory-game.netlify.app/)** 
 
-💻 **[Source Code](https://github.com/hknkhrmn/Patika-Frontend-Bootcamp/tree/9b51ef00c558eccf7c1b10cdcc36dedad8f73c34/Week-10/card-game)**
-
-
 
 ## 🎮 How to Play
 

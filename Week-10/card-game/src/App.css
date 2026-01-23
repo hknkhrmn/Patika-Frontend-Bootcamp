@@ -1,42 +1,152 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* NBA Temalı Renkler ve Fontlar */
+:root {
+  --nba-blue: #1d428a;
+  --nba-red: #c8102e;
+  --nba-gold: #ffc72c;
+  --dark-bg: #121212;
+}
+
+.container {
+  min-height: 100vh;
+  background: radial-gradient(circle, #2c3e50 0%, #000 100%);
+  padding: 20px;
+  color: white;
+  font-family: 'Oswald', sans-serif; 
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.title {
+  color: var(--nba-gold);
+  text-shadow: 2px 2px var(--nba-red);
+  font-size: 3rem;
+  margin-bottom: 5px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.stats-bar {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--nba-blue);
+  min-width: 100px;
+}
+
+.level-buttons {
+  margin: 20px 0;
+}
+
+.btn-level {
+  background: transparent;
+  color: white;
+  border: 2px solid var(--nba-gold);
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-level.active {
+  background: var(--nba-gold);
+  color: black;
+}
+
+
+.start-btn {
+  background: var(--nba-red); 
+  color: white;
+  border: 2px solid var(--nba-gold); 
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 50px; 
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(200, 16, 46, 0.4);
+  margin: 20px auto;
+  display: block;
+  font-family: 'Oswald', sans-serif;
+}
+
+.start-btn:hover {
+  background: var(--nba-blue); 
+  transform: scale(1.1) translateY(-3px); 
+  box-shadow: 0 0 25px var(--nba-gold); 
+  color: var(--nba-gold);
+}
+
+.start-btn:active {
+  transform: scale(0.95); 
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+  perspective: 1000px;
+}
+
+.card-wrapper {
+  aspect-ratio: 3/4; 
+  cursor: pointer;
 }
 
 .card {
-  padding: 2em;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.read-the-docs {
-  color: #888;
+.card.flipped { transform: rotateY(180deg); }
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  border: 2px solid var(--nba-gold);
+}
+
+.front {
+  background: linear-gradient(45deg, var(--nba-blue), var(--nba-red));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.back {
+  background: #fff;
+  transform: rotateY(180deg);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.win-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.9);
+  padding: 50px;
+  border-radius: 20px;
+  border: 3px solid var(--nba-gold);
+  z-index: 100;
 }

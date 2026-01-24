@@ -73,14 +73,14 @@ function CardGame() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const timerRef = useRef(null);
 
-  // Ses Efektleri (Opsiyonel: public/sounds klasörüne eklemelisin)
+  // Ses efektleri
   const playSound = (type) => {
      const audio = new Audio(`/sounds/${type}.mp3`);
      audio.play().catch(() => {}); 
     console.log("Ses çalıyor: ", type); 
   };
 
-  // Zamanlayıcı Yönetimi
+  // Zamanlayıcı 
   useEffect(() => {
     if (state.started && state.score < state.level) {
       timerRef.current = setInterval(() => dispatch({ type: 'TICK' }), 1000);
@@ -108,7 +108,7 @@ function CardGame() {
 
   return (
     <div className="container">
-      <h1 className="title">NBA ALL-STAR MEMORY</h1>
+      <h1 className="title">NBA STAR MEMORY</h1>
 
       <div className="level-buttons">
         {Object.entries(LEVELS).map(([name, val]) => (

@@ -33,4 +33,3 @@ A fast-paced, interactive memory card game built with **React**. Test your memor
 4.  **Win:** Match all pairs in the shortest time possible to secure your spot as the **MVP!**
 
 ---
-*Developed with ❤️ for NBA fans and React learners.*

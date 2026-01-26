@@ -90,7 +90,7 @@ function CardGame() {
     return () => clearInterval(timerRef.current);
   }, [state.started, state.score, state.level]);
 
-  // Eşleşme Kontrolü
+  // Eşleşme kontrolü
   useEffect(() => {
     if (state.selected.length === 2) {
       setTimeout(() => {

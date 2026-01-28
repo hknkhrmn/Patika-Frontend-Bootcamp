@@ -1,16 +1,44 @@
-# React + Vite
+# Todo App - React Implementation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional todo application built with React, following the [TodoMVC](http://todomvc.com) specification and design standards.
 
-Currently, two official plugins are available:
+## 🚀 Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Live Demo Link](https://todoapp-patika12.netlify.app/) 
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ Add new todos
+- ✅ Mark todos as complete/incomplete
+- ✅ Edit todos by double-clicking
+- ✅ Delete todos
+- ✅ Filter todos (All, Active, Completed)
+- ✅ Clear all completed todos
+- ✅ Toggle all todos at once
+- ✅ Display active todo count
+- ✅ Persistent state management
+- ✅ Fully responsive design
+
+## 🛠️ Built With
+
+- **React** - JavaScript library for building user interfaces
+- **React Hooks** - useState, useEffect, useRef for state management
+- **CSS3** - Classic TodoMVC styling
+- **JavaScript ES6+** - Modern JavaScript features
+
+## 🎨 Styling
+
+The app follows the official [TodoMVC](http://todomvc.com) styling guidelines, ensuring consistency with other TodoMVC implementations.
+
+
+
+## 🙏 Acknowledgments
+
+- [TodoMVC](http://todomvc.com) for the design specification
+- [Patika.dev](https://patika.dev) for the learning opportunity
+- React community for excellent documentation
+
+---
+

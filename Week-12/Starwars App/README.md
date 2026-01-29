@@ -23,7 +23,7 @@ A stunning, futuristic web application for exploring Star Wars starships with re
 
 ## 📸 Screenshots
 
-![](/public/images/GIF1.gif)
+[](/public/images/GIF1.gif)
 
 ## 🛠️ Technologies Used
 

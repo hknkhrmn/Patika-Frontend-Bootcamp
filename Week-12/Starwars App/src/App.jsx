@@ -12,7 +12,7 @@ const getShipSources = (id) => [
 ];
 
 
-// ================= SMART IMAGE =================
+
 const SmartImage = ({ shipUrl, className }) => {
   const id = getShipId(shipUrl);
   const sources = [...getShipSources(id), fallbackShip];
@@ -47,14 +47,14 @@ const SmartImage = ({ shipUrl, className }) => {
 };
 
 
-// ================= APP =================
+
 export default function App() {
   const [ships, setShips] = useState([]);
   const [selected, setSelected] = useState(null);
   const [search, setSearch] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // 🔥 TÜM SAYFALARI ÇEKEN FONKSİYON
+  
   const fetchShips = async (query = '') => {
     setLoading(true);
 

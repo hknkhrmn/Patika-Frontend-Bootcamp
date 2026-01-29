@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Renk Tanımlamaları */
+  --color-void: #0b0d17;
+  --color-space: #1a1d29;
+  --color-plasma: #4facfe;
+  --color-warning: #ffe81f;
+  --color-empire: #ff0033;
+  --color-hyperspace: #00f2fe;
+
+  /* Font Tanımlamaları */
+  --font-orbitron: "Orbitron", sans-serif;
+  --font-rajdhani: "Rajdhani", sans-serif;
+
+  
+  @keyframes scan {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+  }
+  --animate-scan: scan 3s linear infinite;
+}
+
+@layer base {
+  body {
+    @apply bg-void font-rajdhani text-gray-200 min-h-screen;
+  }
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}

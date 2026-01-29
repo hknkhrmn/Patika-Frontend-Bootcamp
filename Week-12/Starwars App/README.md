@@ -19,11 +19,11 @@ A stunning, futuristic web application for exploring Star Wars starships with re
 
 ## 🎬 Live Demo
 
-**[View Live Demo](#)** ← *Add your live demo link here*
+**[View Live Demo](#)** 
 
 ## 📸 Screenshots
 
-[](/public/images/GIF1.gif)
+![](/public/images/GIF1.gif)
 
 ## 🛠️ Technologies Used
 

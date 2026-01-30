@@ -19,7 +19,7 @@ A stunning, futuristic web application for exploring Star Wars starships with re
 
 ## 🎬 Live Demo
 
-**[View Live Demo](#)** 
+**[View Live Demo](https://starwars-5jxia5z1v-hakans-projects-02486c03.vercel.app)** 
 
 ## 📸 Screenshots
 

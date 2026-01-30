@@ -122,18 +122,6 @@ Adjust animation durations and effects in `src/index.css` and inline styles in c
 - Google Fonts for the Orbitron and Rajdhani typefaces
 - The Star Wars universe created by George Lucas
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
-
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Name](https://linkedin.com/in/yourprofile)
-
-
-
 ---
 
 *May the Force be with you!* 

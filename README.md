@@ -19,6 +19,21 @@ Each folder represents a specific milestone in the bootcamp, containing hands-on
     * **Fundamentals:** Understanding Components, Props, and the Virtual DOM.
     * **State Management:** Local State with `useState` and Global State with **Context API**.
     * **Interactivity:** Advanced Event Handling and Dynamic UI updates.
+* **Week 10: React Hooks Deep Dive:**
+    * **⚛️ React Hooks:** Understanding `useEffect`, `useReducer`, and `useRef` hooks.
+    * **🔄 useState Usage:** Managing component state with the `useState` hook.
+    * **🔧 useReducer Usage:** Handling complex state management with `useReducer`.
+    * **🔍 Lifecycle Management:** Managing component lifecycle with `useEffect`.
+    * **📝 useRef Usage:** Direct DOM element access using `useRef`.
+    * **🎲 Dice Game Project:** Building an interactive dice game to practice React hooks.
+* **Week 11: React Project Development:**
+    * **⚛️ Question App Project:** Building a question-answer application to consolidate React fundamentals.
+* **Week 12: Advanced React:**
+    * **🌐 Advanced Topics:** Router, Form Handling, and Data Fetching.
+    * **🛤️ React Router:** Building Single Page Applications (SPA) with React Router.
+    * **📝 Form Handling with Formik:** Managing form operations using the Formik library.
+    * **📡 Data Fetching:** Using `useState` and `useEffect` for API data fetching and management.
+    * **🛒 e-Commerce App Project:** Developing a functional e-commerce application using advanced React concepts.
 
 
 ## 🛠️ Technologies & Tools

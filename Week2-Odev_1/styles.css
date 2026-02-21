@@ -1,0 +1,141 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Arka Plan: #f4f4f4 */
+    font-family: Arial, sans-serif; /* Yazı Tipi: Arial, sans-serif */
+    line-height: 1.6;
+}
+
+/* Başlık (Header) Ayarları */
+header {
+    background-color: #333; 
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+/* Menü  Ayarları */
+nav {
+    margin-top: 15px;
+}
+
+nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff; 
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ccc; 
+    text-decoration: none;
+}
+
+
+a:visited {
+    color: inherit;
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Blog Kartları  Ayarları */
+article.card {
+    background-color: #fff; /* Beyaz arka plan  */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px; /* Yuvarlatılmış köşeler  */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1); /* Gölge efekti  */
+    border: 1px solid #ddd; 
+}
+
+
+.blog-image {
+    /* Masaüstü ve tabletler için resim genişliğini %50 olarak ayarla */
+    width: 50%; 
+    height: auto; /* Orantısı bozulmasın */
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    margin: 0 auto 15px auto; /* Resmi ortala (margin-left ve margin-right auto) */
+    display: block; /* Resmi ortalamak için gereklidir */
+}
+
+/* Mobil Cihazlar İçin (Örneğin 768px altı) */
+@media (max-width: 768px) {
+    .blog-image {
+        width: 100%; /* Mobil cihazlarda resmi tam genişlikte göster */
+    }
+}
+
+/* Metin Renkleri */
+h1{
+    color: #fff;
+}
+
+h2, h3 {
+    color: #333; /* Başlıklar: #333 */
+}
+
+p {
+    color: #666; /* Paragraflar: #666  */
+}
+
+/* Link Butonları */
+.btn {
+    display: inline-block;
+    background-color: #555; 
+    color: #fff !important; 
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #333; 
+    color: #fff;
+}
+
+
+blockquote {
+    background: #eef6ff; 
+    border-left: 5px solid #666; 
+    padding: 15px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #444;
+}
+
+/* Footer Ayarları */
+footer {
+    background-color: #333; /* Başlık ve Footer: #333 (Koyu Gri) */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    /* Kırmızı üst çizgiyi kaldırıyoruz */
+}

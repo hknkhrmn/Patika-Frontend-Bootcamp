@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Elemanları Pratiği</title>
+</head>
+<body>
+  <h2>Pratik - Form Elemanları Kullanımı</h2>
+  <form action="thankyou.html" method="post">
+
+    <!-- Ad ve Soyad -->
+    <label for="firstname">Ad:</label><br>
+    <input type="text" id="firstname" name="firstname" required><br><br>
+
+    <label for="lastname">Soyad:</label><br>
+    <input type="text" id="lastname" name="lastname" required><br><br>
+
+    <!-- E-posta -->
+    <label for="email">E-posta:</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <!-- Parola -->
+    <label for="password">Parola:</label><br>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <!-- Cinsiyet -->
+    <label>Cinsiyet:</label><br>
+    <input type="radio" id="male" name="gender" value="Erkek">
+    <label for="male">Erkek</label><br>
+    <input type="radio" id="female" name="gender" value="Kadın">
+    <label for="female">Kadın</label><br><br>
+
+    <!-- Favori Meyve -->
+    <label for="fruit">Favori Meyveniz:</label><br>
+    <select id="fruit" name="fruit">
+      <option value="Elma">Elma</option>
+      <option value="Muz">Muz</option>
+      <option value="Çilek">Çilek</option>
+      <option value="Kayısı">Kayısı</option>
+      <option value="Üzüm">Üzüm</option>
+      <option value="Karpuz">Karpuz</option>
+      <option value="Mandalina">Mandalina</option>
+      <option value="Portakal">Portakal</option>
+    </select><br><br>
+
+    <!-- Mesaj -->
+    <label for="message">Mesajınız:</label><br>
+    <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+    <!-- Gönder Butonu -->
+    <button type="submit">Gönder</button>
+
+  </form>
+</body>
+</html>

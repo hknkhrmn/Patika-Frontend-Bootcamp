@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<style>
+  /* 1. DISPLAY: Sayfa düzenini oluşturuyoruz */
+  body {
+    display: flex;            /* Esnek kutu modeli */
+    justify-content: center;  /* Yatayda ortala */
+    align-items: center;      /* Dikeyde ortala */
+    height: 100vh;            /* Sayfa yüksekliği kadar yer kapla */
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+
+  .kart {
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    /* 2. POSITION (Referans): İçindeki absolute element buna göre konumlanacak */
+    position: relative; 
+    padding: 20px;
+  }
+
+  .indirim-etiketi {
+    background-color: #ff4757;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+
+    /* 2. POSITION (Mutlak): Karta göre sağ üst köşeye yapıştır */
+    position: absolute;
+    top: -10px;    /* Kartın biraz üstüne çıksın */
+    right: -10px;  /* Kartın biraz dışına taşsın */
+
+    /* 3. LAYER (Katman): Diğer her şeyin üstünde görünsün */
+    z-index: 10; 
+  }
+
+  h2 { margin-top: 0; }
+
+  .aciklama-kutusu {
+    height: 80px;       /* Sabit bir yükseklik veriyoruz */
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 10px;
+
+    /* 4. OVERFLOW (Taşma): Yazı sığmazsa kaydırma çubuğu çıksın */
+    overflow: auto; 
+  }
+</style>
+</head>
+<body>
+
+  <div class="kart">
+    <div class="indirim-etiketi">%50 İNDİRİM</div>
+
+    <h2>Süper Kulaklık</h2>
+    
+    <div class="aciklama-kutusu">
+      Bu kulaklık harika bir ses kalitesine sahip. 
+      Ancak bu metin kutuya sığmayacak kadar uzun yazıldı. 
+      Daha fazla detay, teknik özellikler, pil ömrü ve garanti koşulları 
+      hakkında bilgi almak için aşağı doğru kaydırmanız gerekecek. 
+      Gördüğünüz gibi overflow özelliği sayesinde kutu bozulmuyor!
+    </div>
+    
+    <button style="margin-top:15px; width:100%; padding:10px; background:#3742fa; color:white; border:none; border-radius:5px; cursor:pointer;">Satın Al</button>
+  </div>
+
+</body>
+</html>

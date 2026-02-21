@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>CSS Selectors</title>
+    <style>
+        .c1 {
+            padding-left: 8px;
+            border-left: 5px solid orange
+        }
+
+        .c2.c3 {
+            padding-left: 8px;
+            border-left: 5px solid orange
+        }
+
+        .c4 .c5 {
+            padding: 1px 3px;
+            border: 3px solid orange;
+
+        }
+
+        #paragraph {
+            padding-left: 8px;
+            border-left: 5px solid orange
+        }
+
+        p.c6 {
+            padding-left: 8px;
+            border-left: 5px solid orange
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Selectors</h1>
+    <h2>.class</h2>
+    <p class="c1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+    <p>Voluptates eum officiis quas eaque labore, minus vel error unde sed fugit ut praesentium necessitatibus, saepe
+        nemo eos, magni quaerat officia tempora!</p>
+
+    <h2>.class1 .class2</h2>
+
+    <p class="c2 c3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <p class="c2">Nam exercitationem, saepe nostrum eos consequatur natus placeat quidem aperiam culpa aliquam quia
+        quasi laudantium.</p>
+
+    <h2>.class1 .class2</h2>
+    <p class="c4">Lorem ipsum <span class="c5">dolor sit amet consectetur</span> adipisicing elit. At ratione obcaecati
+        hic cupiditate, similique, impedit possimus magni itaque nemo atque nulla deserunt tempora officiis culpa a eos
+        ad quae illo?</p>
+    <h2>#id</h2>
+    <p id="paragraph">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis soluta quibusdam nulla eius
+        porro fugiat labore corrupti aspernatur. Ducimus quod perferendis vitae itaque eos assumenda, quo voluptatem
+        sint velit magnam.</p>
+
+    <h2>element.class</h2>
+
+    <p class="c6">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi quis aperiam atque eveniet perferendis
+        tempora reiciendis optio, non quos repellat velit a iste vitae officiis enim modi ratione error eius?</p>
+
+    <h2>element>element</h2>
+
+    <p>Lorem ipsum <mark>dolor sit, amet consectetur</mark> adipisicing elit. Recusandae deleniti vel accusantium amet delectus! Numquam iste laudantium, mollitia tenetur tempora aspernatur quos molestiae sapiente maiores vel laboriosam odio ratione dolore.</p>
+
+
+
+
+
+</body>
+
+</html>

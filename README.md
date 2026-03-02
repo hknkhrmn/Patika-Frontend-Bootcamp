@@ -8,32 +8,82 @@ It tracks my progress from the very basics of web development to advanced modern
 
 Each folder represents a specific milestone in the bootcamp, containing hands-on exercises and real-world projects:
 
-* **Week 1 & 2:** HTML Fundamentals, CSS Basics, and Web Layouts.
-* **Week 3:** Advanced CSS, Flexbox, Grid, and UI Design clones (e.g., LinkedIn/Instagram clones).
-* **Week 4:** Modern CSS Frameworks (Tailwind CSS, Bootstrap) and Responsive Design.
-* **Week 5:** JavaScript Fundamentals, DOM Manipulation, and Logic.
-* **Week 6:** Advanced JavaScript (ES6+), Asynchronous Programming, and API Fetching.
-* **Week 7:** Introduction to Front-End Libraries and Final Preparations.
-* **Week 8:** **Capstone Project:** **Sport Center** - A comprehensive final project integrating all learned technologies.
-* **Week 9: Deep Dive into React:**
-    * **Fundamentals:** Understanding Components, Props, and the Virtual DOM.
-    * **State Management:** Local State with `useState` and Global State with **Context API**.
-    * **Interactivity:** Advanced Event Handling and Dynamic UI updates.
-* **Week 10: React Hooks Deep Dive:**
-    * **⚛️ React Hooks:** Understanding `useEffect`, `useReducer`, and `useRef` hooks.
-    * **🔄 useState Usage:** Managing component state with the `useState` hook.
-    * **🔧 useReducer Usage:** Handling complex state management with `useReducer`.
-    * **🔍 Lifecycle Management:** Managing component lifecycle with `useEffect`.
-    * **📝 useRef Usage:** Direct DOM element access using `useRef`.
-    * **🎲 Dice Game Project:** Building an interactive dice game to practice React hooks.
-* **Week 11: React Project Development:**
-    * **⚛️ Question App Project:** Building a question-answer application to consolidate React fundamentals.
-* **Week 12: Advanced React:**
-    * **🌐 Advanced Topics:** Router, Form Handling, and Data Fetching.
-    * **🛤️ React Router:** Building Single Page Applications (SPA) with React Router.
-    * **📝 Form Handling with Formik:** Managing form operations using the Formik library.
-    * **📡 Data Fetching:** Using `useState` and `useEffect` for API data fetching and management.
-    * **🛒 e-Commerce App Project:** Developing a functional e-commerce application using advanced React concepts.
+## Week 1 & 2
+- HTML Fundamentals
+- CSS Basics
+- Web Layouts
+
+## Week 3
+- Advanced CSS
+- Flexbox & Grid
+- UI Design Clones (LinkedIn / Instagram)
+
+## Week 4
+- Modern CSS Frameworks (Tailwind CSS, Bootstrap)
+- Responsive Design
+
+## Week 5
+- JavaScript Fundamentals
+- DOM Manipulation
+- Core Logic Development
+
+## Week 6
+- Advanced JavaScript (ES6+)
+- Asynchronous Programming
+- API Fetching
+
+## Week 7
+- Introduction to Front-End Libraries
+- Final Preparations
+
+## Week 8
+- Capstone Project: Sport Center
+- Integration of all learned technologies
+
+## Week 9
+- React Fundamentals (Components, Props, Virtual DOM)
+- State Management (useState, Context API)
+- Event Handling & Dynamic UI Updates
+
+## Week 10
+- React Hooks (useEffect, useReducer, useRef)
+- State Management with useState
+- Complex State with useReducer
+- Lifecycle Management with useEffect
+- DOM Access with useRef
+- Dice Game Project
+
+## Week 11
+- Question App Project (React Fundamentals Consolidation)
+
+## Week 12
+- Advanced React Topics (Router, Forms, Data Fetching)
+- React Router (SPA Development)
+- Form Handling with Formik
+- API Data Management (useState & useEffect)
+- E-Commerce App Project
+
+## Week 13
+- File System Capstone Project (Core Logic Focus)
+- Technical Interview Simulations
+- Self-Evaluation & Peer Feedback
+
+## Week 14
+- Full-Stack Project Analysis
+- Live Deployment
+- Coderbyte Technical Assessment
+- Final Capstone Requirement Analysis (Library Management System)
+
+## Week 15
+- Library Management System Capstone Project
+- CV, LinkedIn & GitHub Optimization
+- Project Iteration & Mentor Feedback Implementation
+
+## Week 16
+- Docker Fundamentals
+- Open Source Contribution Workflows
+- Final Evaluations & Industry Preparation
+- Alumni Network & Career Guidance
 
 
 ## 🛠️ Technologies & Tools
